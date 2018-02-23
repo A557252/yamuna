@@ -12,7 +12,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table (name = "USER_TABLE")
+@Table (name = "USER")
 public class User implements Serializable{
 	/**
 	 * 
@@ -24,9 +24,6 @@ public class User implements Serializable{
 	@Column(name="USER_ID")
 	private int userId;
 	
-	@Column(name="USER_FULLNAME",length=50)
-	private String userFullName;
-	
 	@Column(name="USER_NAME",length=50)
 	private String userName;
 	
@@ -36,18 +33,16 @@ public class User implements Serializable{
 	@Column(name="USER_ROLE",length=100)
 	private String userRole;
 	
-	@Column(name="IS_ACTIVE",length=1)
+	@Column(name="IS_ACTIVE",length=3)
 	private String IsActive;
 	
 	public User() {
 		
 	}
 
-	public User(int userId, String userFullName, String userName, String userPassword, String userRole,
+	public User(int userId, String userName, String userPassword, String userRole,
 			String isActive) {
-		super();
 		this.userId = userId;
-		this.userFullName = userFullName;
 		this.userName = userName;
 		this.userPassword = userPassword;
 		this.userRole = userRole;
@@ -60,14 +55,6 @@ public class User implements Serializable{
 
 	public void setUserId(int userId) {
 		this.userId = userId;
-	}
-
-	public String getUserFullName() {
-		return userFullName;
-	}
-
-	public void setUserFullName(String userFullName) {
-		this.userFullName = userFullName;
 	}
 
 	public String getUserName() {
@@ -100,5 +87,11 @@ public class User implements Serializable{
 
 	public void setIsActive(String isActive) {
 		IsActive = isActive;
+	}
+
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", userName=" + userName + ", userPassword=" + userPassword + ", userRole="
+				+ userRole + ", IsActive=" + IsActive + "]";
 	}
 }
