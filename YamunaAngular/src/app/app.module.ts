@@ -5,6 +5,11 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { BookingInquiryComponent } from './booking-inquiry/booking-inquiry.component';
 
+import { HttpModule } from '@angular/http';
+import { InquiryService } from './Services/InquiryService';
+
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,9 +17,11 @@ import { BookingInquiryComponent } from './booking-inquiry/booking-inquiry.compo
     BookingInquiryComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule,
+    FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ InquiryService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

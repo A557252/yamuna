@@ -26,11 +26,11 @@
                 <span>VIN</span>
             </div>
             <div class="col-md-3 col-xs-10">
-                <input type="text" class="vin_input"/><br/>
+                <input type="text" class="vin_input" [(ngModel)]="vinNumber"/><br/>
                 <span class="vin_input_text">(VIN number should be 17 characters.)</span>
             </div>
             <div class="col-md-2 col-scol-xs-12">
-                <button type="button" class="btn btn-default search_button">
+                <button type="button" class="btn btn-default search_button" (click)="serachByVinNumber(vinNumber)">
                     <span class="glyphicon glyphicon-search"></span> 
                     <span class="inquiries">Search</span>
                 </button>
@@ -42,7 +42,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-2">
             <span class="packages"><b>Packages</b></span>
           </div>
         </div>
@@ -53,9 +53,9 @@
                   <tbody>
                     <ng-container *ngFor="let packageObj of packagesArray">
                       <tr>
-                        <td class="checkbox_td"><input type="checkbox" name="check" id="check"></td>
-                        <td (click)="packageObj.expand = !packageObj.expand">{{packageObj.name}}</td>
-                        <td class="align_right" (click)="packageObj.expand = !packageObj.expand"><span class="badge  badge-pill badge-primary rupee_badge">&euro;600</span><i [class]="packageObj.expand ? 'fa fa-sort-up' : 'fa fa-sort-down'"></i></td>
+                        <td class="checkbox_td"><input type="checkbox" [(ngModel)]="packageObj.selected" name="check" id="check" (ngModelChange)="selectPackages(packageObj)"></td>
+                        <td (click)="packageObj.expand = !packageObj.expand">{{packageObj.packageName}}</td>
+                        <td class="align_right" (click)="packageObj.expand = !packageObj.expand"><span class="badge  badge-pill badge-primary rupee_badge">&euro; {{packageObj.price}}</span><i [class]="packageObj.expand ? 'fa fa-sort-up' : 'fa fa-sort-down'"></i></td>
                       </tr>
                       <tr *ngIf="packageObj.expand">
                         <td colspan="3">
@@ -73,13 +73,26 @@
                                         </thead>
                                         <tbody>
                                           <tr>
-                                            <td>$400</td>
+                                            <td>&euro; {{packageObj.price}}</td>
                                             <td>
-                                              lllllllllssdsldlslsld
-                                              sdsdssssssssssssssssssssssssssssssssssssdss
+                                              {{packageObj.description}}
                                             </td>
-                                            <td>john@example.com</td>
-                                            <td>john@example.com</td>
+                                            <td>
+                                              <div class="row" *ngFor="let sparepart of packageObj.spareParts; let last = last">
+                                                <div class="col-md-12">
+                                                  {{sparepart.name}}
+                                                  <hr *ngIf="!last"/>
+                                                </div>
+                                              </div>
+                                            </td>
+                                            <td>
+                                              <div class="row" *ngFor="let labourPosition of packageObj.labourPositions; let last = last">
+                                                <div class="col-md-12">
+                                                  {{labourPosition.workDescription}}
+                                                  <hr *ngIf="!last"/>
+                                                </div>
+                                              </div>
+                                            </td>
                                           </tr>
                                         </tbody>
                                   </table>
@@ -102,7 +115,7 @@
             <span><b>Total amount</b></span>
           </div>
           <div class="col-md-1 col-xs-1">
-            <span class="total_amount">&euro;600</span>
+            <span class="total_amount">&euro; {{totalAmount}}</span>
           </div>
         </div>
       </div>
