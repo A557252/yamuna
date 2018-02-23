@@ -14,17 +14,7 @@
     padding-right: 10px;
 }
 
-.amount_row {
-    background-color: #E0E9F0;
-    padding: 13px;
-    border-top: 1px solid black;
-}
-.total_amount {
-    color: blue;
-}
-button {
-    box-shadow: 3px 3px #888888;
-}
+
 
 
 @media only screen and (max-width: 500px) {

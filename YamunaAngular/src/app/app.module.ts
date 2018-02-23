@@ -14,7 +14,7 @@ import { SearchComponent } from './components/main/search/search.component';
 import { PackagesComponent } from './components/main/packages/packages.component';
 import { PackageComponent } from './components/main/packages/package/package.component';
 import { PackageDetailsComponent } from './components/main/packages/package/package-details/package-details.component';
-import { OtherPackageComponent } from './components/main/other-package/other-package.component';
+import { OtherPackageComponent } from './components/main/packages/other-package/other-package.component';
 import { Broadcaster } from './utils/brodcaster';
 
 @NgModule({

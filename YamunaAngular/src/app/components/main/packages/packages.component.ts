@@ -8,12 +8,14 @@ import { Broadcaster } from '../../../utils/brodcaster';
 })
 export class PackagesComponent implements OnInit {
 
+  totalAmount: any = 0;
+
   constructor(private broadcaster: Broadcaster) { }
 
   ngOnInit() {
     this.broadcaster.on<string>('updateAmount')
     .subscribe(message => {
-      console.log(message);
+      this.totalAmount = message;
     });
   }
 

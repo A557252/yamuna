@@ -1,8 +1,8 @@
 export class Constants {
 
     public static URL = {
-        host_url: 'http://10.87.203.172:8080',
-        inquiry_url: '/yamuna/packages/?vin='
+        host_url: 'http://10.87.201.73:9000',
+        inquiry_url: '/BIOS/packagess?vin='
     };
 
     public static json = [
