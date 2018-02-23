@@ -30,8 +30,8 @@ export class SearchComponent implements OnInit {
       console.log(resError);
     });
     // if service is offline use below data for  //dev
-    // this.packagesArray = Constants.json;
-    // this.broadcaster.broadcast('updatePackages', this.packagesArray);
+    this.packagesArray = Constants.json;
+    this.broadcaster.broadcast('updatePackages', this.packagesArray);
 
   }
 

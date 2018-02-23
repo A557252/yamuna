@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="form">
+    <div class="centerPad">
+      <h1 class="center">Login</h1>
+      <br>
+      <form class="form-inline" #userlogin="ngForm" (ngSubmit)="loginUser(userlogin.value)" novalidate>
+        <div>
+          <div class="form-group">
+            <input id="userName" name="userName" type="text" class="form-control" [(ngModel)]="user.userName" placeholder="Enter DAS ID"
+              required #userName="ngModel">
+            <div class="red" *ngIf="userName.invalid && (userName.dirty || userName.touched)">
+              User Name is required.
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <input id="userPassword" name="userPassword" type="userPassword" class="form-control" [(ngModel)]="user.userPassword" placeholder="Enter password"
+              required #userPassword="ngModel">
+            <span class="red" *ngIf="userPassword.invalid && (userPassword.dirty || userPassword.touched)">
+              Password is required.
+            </span>
+          </div>
+          <br>
+          <div class="form-group">
+            <div>
+              <button type="submit" class="btn btn-default" [disabled]="!userlogin.form.valid">Login</button>
+            </div>
+          </div>
+          <span class="red" *ngIf="submitted">
+            DAS ID or Password is Wrong. Please enter Correct Credentials.
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
