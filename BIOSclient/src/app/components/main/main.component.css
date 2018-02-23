@@ -1,0 +1,25 @@
+.body_container {
+    margin-top: 20px;
+    /* border: 1px solid black; */
+    border-style: inset;
+    border-width: 2px;
+    height: auto;
+    padding: 55px;
+}
+
+.rupee_badge {
+    margin-right: 10px;
+    background-color: #2274AC;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+
+
+@media only screen and (max-width: 500px) {
+    .body_container {
+        padding: 10px;
+    }
+
+}
