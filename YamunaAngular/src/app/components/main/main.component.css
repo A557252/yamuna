@@ -1,0 +1,35 @@
+.body_container {
+    margin-top: 20px;
+    /* border: 1px solid black; */
+    border-style: inset;
+    border-width: 2px;
+    height: auto;
+    padding: 55px;
+}
+
+.rupee_badge {
+    margin-right: 10px;
+    background-color: #2274AC;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.amount_row {
+    background-color: #E0E9F0;
+    padding: 13px;
+    border-top: 1px solid black;
+}
+.total_amount {
+    color: blue;
+}
+button {
+    box-shadow: 3px 3px #888888;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .body_container {
+        padding: 10px;
+    }
+
+}
