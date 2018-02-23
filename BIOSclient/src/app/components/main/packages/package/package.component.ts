@@ -9,19 +9,13 @@ import { Broadcaster } from '../../../../utils/brodcaster';
   styleUrls: ['./package.component.css']
 })
 export class PackageComponent implements OnInit {
-
-  packagesArray: any;
+   @Input() packagesArray: any;
   selectedPackageArray: Array<any> = [];
   totalAmount = 0;
 
   constructor(private _inquiryService: InquiryService, private brodcaster: Broadcaster) { }
 
   ngOnInit() {
-   this.brodcaster.on<string>('updatePackages')
-    .subscribe(message => {
-      this.packagesArray = message;
-    });
-
   }
 
   selectPackages(selectedPackage, isSelectAll) {

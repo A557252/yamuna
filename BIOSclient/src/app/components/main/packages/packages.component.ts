@@ -8,6 +8,7 @@ import { Broadcaster } from '../../../utils/brodcaster';
 })
 export class PackagesComponent implements OnInit {
 
+  packagesArray: any = [];
   totalAmount: any = 0;
 
   constructor(private broadcaster: Broadcaster) { }
@@ -16,6 +17,12 @@ export class PackagesComponent implements OnInit {
     this.broadcaster.on<string>('updateAmount')
     .subscribe(message => {
       this.totalAmount = message;
+    });
+
+    this.broadcaster.on<string>('updatePackages')
+    .subscribe(message => {
+      console.log('updatePackages');
+      this.packagesArray = message;
     });
   }
 
