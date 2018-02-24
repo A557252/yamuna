@@ -44,11 +44,11 @@ public class UserController {
 	                return new ResponseEntity < String > (Constants.SUCCESS_STATUS + Constants.LOGIN_SUCCESS, HttpStatus.OK);
 	            } else {
 	                log.error("User Log In Failed" + user.getUserName());
-	                return new ResponseEntity < String > (Constants.FAILURE_STATUS + Constants.LOGIN_FAILURE_NO_USER, HttpStatus.OK);
+	                return new ResponseEntity < String > (Constants.FAILURE_STATUS + Constants.LOGIN_FAILURE_NO_USER, HttpStatus.NOT_FOUND);
 	            }
 	        } catch (Exception e) {
 	            log.error("User Log In Failed" + e.getMessage());
-	            return new ResponseEntity < String > (Constants.FAILURE_STATUS + Constants.LOGIN_FAILURE_NO_USER, HttpStatus.OK);
+	            return new ResponseEntity < String > (Constants.FAILURE_STATUS + Constants.LOGIN_FAILURE_NO_USER, HttpStatus.BAD_REQUEST);
 	        }
 	    }
 
