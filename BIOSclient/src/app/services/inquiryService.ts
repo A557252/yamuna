@@ -12,7 +12,7 @@ export class InquiryService {
     constructor(private _http: Http) {}
 
     vinSearch(vinNumber) {
-        return this._http.get(Constants.URL.host_url + Constants.URL.inquiry_url + vinNumber)
+        return this._http.get(Constants.URL.host_url + Constants.URL.packages_url + vinNumber)
         .map((response: Response) => {
             const userResponse = response.json();
             return userResponse;
@@ -24,4 +24,13 @@ export class InquiryService {
         return Observable.throw(error || 'server error');
     }
 
+    vinInquiries(vinNumber){
+        return this._http.get(Constants.URL.host_url + Constants.URL.inquiry_url + vinNumber)
+        .map((response: Response) => {
+            const userResponse = response.json();
+            return userResponse;
+        })
+        .catch(this._vinSearchErrorHandler);
+    }
+    
 }

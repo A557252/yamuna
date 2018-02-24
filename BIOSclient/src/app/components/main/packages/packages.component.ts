@@ -24,6 +24,8 @@ export class PackagesComponent implements OnInit {
       console.log('updatePackages');
       this.packagesArray = message;
     });
+
+   
   }
 
 

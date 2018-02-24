@@ -17,6 +17,8 @@ import { OtherPackageComponent } from './components/main/packages/other-package/
 import { Broadcaster } from './utils/brodcaster';
 import { User } from './models/user.model';
 import { UserService } from './services/UserService';
+import { InquiriesComponent } from './components/main/inquiries/inquiries.component';
+import { InquiryComponent } from './components/main/inquiries/inquiry/inquiry.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -34,7 +36,9 @@ const appRoutes: Routes = [
     PackagesComponent,
     PackageComponent,
     PackageDetailsComponent,
-    OtherPackageComponent
+    OtherPackageComponent,
+    InquiriesComponent,
+    InquiryComponent
   ],
   imports: [
     BrowserModule,
