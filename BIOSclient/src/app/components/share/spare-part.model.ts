@@ -1,3 +1,4 @@
 export class SparePart {
-    constructor(private spareId: number, name: string) {}
+    constructor(public spareId: number, public spareName: string, 
+        public sparePrice: number) {}
 }

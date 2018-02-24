@@ -13,7 +13,7 @@ export class SearchComponent implements OnInit {
 
   vinNumber;
 
-  packagesArray: Array<any> = [];
+  packagesArray: Package[] = [];
   inquiryArray: Array<any> = [];
 
   constructor(private _inquiryService: InquiryService, private broadcaster: Broadcaster ) { }
@@ -23,15 +23,15 @@ export class SearchComponent implements OnInit {
   }
 
   serachByVinNumber(vinNumber) {
-    // this._inquiryService.vinSearch(vinNumber).subscribe((res) => {
-    //   console.log(res);
-    //   this.packagesArray = res;
-    //   this.broadcaster.broadcast('updatePackages', this.packagesArray);
-    // }, (resError) => {
-    //   console.log(resError);
-    // });
+    this._inquiryService.vinSearch(vinNumber).subscribe((res) => {
+      console.log(res);
+      this.packagesArray = res[0].packages;
+      this.broadcaster.broadcast('updatePackages', this.packagesArray);
+    }, (resError) => {
+      console.log(resError);
+    });
     // if service is offline use below data for  //dev
-    this.packagesArray = Constants.json;
+    this.packagesArray = JSON.parse(JSON.stringify(Constants.json[0])).packages;
     this.broadcaster.broadcast('updatePackages', this.packagesArray);
   }
 

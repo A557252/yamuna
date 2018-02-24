@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Broadcaster } from '../../../utils/brodcaster';
+import { Package } from '../../share/package.model';
 
 @Component({
   selector: 'app-packages',
@@ -8,7 +9,7 @@ import { Broadcaster } from '../../../utils/brodcaster';
 })
 export class PackagesComponent implements OnInit {
 
-  packagesArray: any = [];
+  packagesArray: Package[] = [];
   totalAmount: any = 0;
 
   constructor(private broadcaster: Broadcaster) { }
@@ -20,7 +21,7 @@ export class PackagesComponent implements OnInit {
     });
 
     this.broadcaster.on<string>('updatePackages')
-    .subscribe(message => {
+    .subscribe( (message: any) => {
       this.packagesArray = message;
     });
   }

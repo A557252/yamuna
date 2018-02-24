@@ -3,12 +3,13 @@ import { LabourPosition } from './labour-position.model';
 
 export class Package {
 
-    private packageId: number;
-    private packageName: string;
-    private price: number;
-    private description: string;
-    private spareParts: SparePart[];
-    private labourPositions: LabourPosition[];
+    public packageId: number;
+    public packageName: string;
+    public price: number;
+    public description: string;
+    public isActive: string;
+    public spareParts: SparePart[];
+    public labourPositions: LabourPosition[];
 
     constructor(packageId: number, packageName: string,
         price: number, description: string, spareParts: SparePart[],

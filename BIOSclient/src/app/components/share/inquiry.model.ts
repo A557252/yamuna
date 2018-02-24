@@ -3,12 +3,12 @@ import { AdditionalItem } from "./additional-item.model";
 
 export class Inquiry{
 
-    private title: string;
-    private totalPrice: number;
-    private userId: number;
-    private carId: number;
-    private packages: Package[];
-    private additionalItems: AdditionalItem[];
+    public title: string;
+    public totalPrice: number;
+    public userId: number;
+    public carId: number;
+    public packages: Package[];
+    public additionalItems: AdditionalItem[];
 
     constructor(title:string, totalPrice:number, userId: number, carId: number, 
         packages: Package[], additionalItems: AdditionalItem[]){

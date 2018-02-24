@@ -1,3 +1,4 @@
 export class LabourPosition {
-    constructor(private labourPositionId: number, private workDescription: string) {}
+    constructor(public lpositionId: number, public lpositionName: string, 
+        public lpositionPrive: number) {}
 }

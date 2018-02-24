@@ -9,8 +9,8 @@ import { Broadcaster } from '../../../../utils/brodcaster';
   styleUrls: ['./package.component.css']
 })
 export class PackageComponent implements OnInit {
-   @Input() packagesArray: any;
-  selectedPackageArray: Array<any> = [];
+   @Input() packagesArray: Package[];
+  selectedPackageArray: Package[] = [];
   totalAmount = 0;
 
   constructor(private _inquiryService: InquiryService, private brodcaster: Broadcaster) {}
