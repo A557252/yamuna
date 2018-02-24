@@ -5,6 +5,7 @@
     width: 60px;
     height: 60px;
     margin-top: -28px;
+    margin-left: 20px;
 }
 
 .header input {
@@ -22,4 +23,10 @@
 }
 .userDetail .fa.fa-user {
     padding-right: 5px;
+}
+
+@media only screen and (max-width: 500px) {
+    .userDetail {
+        font-size: 17px !important;
+    }
 }

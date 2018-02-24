@@ -5,9 +5,11 @@
   <div class="col-md-5 col-xs-9">
     <span class="header_title"><b>Booking & Inquiry Online Service</b></span>
   </div>
-  <div class="col-md-5 col-xs-9 align-right" *ngIf="isUserLoggedIn()">
-      <a class="userDetail"><i class="fa fa-user"></i>Welcome {{userDetailObj}}</a>
+  <div class="col-md-5 col-xs-12 align-right" *ngIf="isUserLoggedIn()">
+    <span class="userDetail">
+      <a><i class="fa fa-user"></i>Welcome {{userDetailObj}}</a>
       <div></div>
-      <a class="userDetail" (click)="logout()">Logout <i class="fa fa-sign-out"></i></a>
+      <a (click)="logout()">Logout <i class="fa fa-sign-out"></i></a>
+    </span>
   </div>
 </div>
