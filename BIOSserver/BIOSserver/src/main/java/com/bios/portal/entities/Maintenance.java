@@ -28,14 +28,17 @@ public class Maintenance implements Serializable{
 	@Column(name="LPOSITION_NAME",length=100)
 	private String lpositionName;
 	
+	@Column(name="LPOSITION_PRICE",length=10)
+	private int lpositionPrice;
+	
 	public Maintenance() {
 
 	}
 
-	public Maintenance(int lpositionId, String lpositionName) {
+	public Maintenance(int lpositionId, String lpositionName, int lpositionPrice) {
 		this.lpositionId = lpositionId;
 		this.lpositionName = lpositionName;
-		
+		this.lpositionPrice = lpositionPrice;
 	}
 
 	public int getLpositionId() {
@@ -54,9 +57,17 @@ public class Maintenance implements Serializable{
 		this.lpositionName = lpositionName;
 	}
 
+	public int getlpositionPrice() {
+		return lpositionPrice;
+	}
+
+	public void setlpositionPrice(int lpositionPrice) {
+		this.lpositionPrice = lpositionPrice;
+	}
+
 	@Override
 	public String toString() {
-		return "LabourPosition [lpositionId=" + lpositionId + ", lpositionName=" + lpositionName + "]";
-	}
-	
+		return "Maintenance [lpositionId=" + lpositionId + ", lpositionName=" + lpositionName + ", lpositionPrice="
+				+ lpositionPrice + "]";
+	}	
 }
