@@ -32,4 +32,6 @@
 .showpwd{
   float: right;
   width: 16px !important;
+  margin-top: -27px;
+  margin-right: 5px;
 }

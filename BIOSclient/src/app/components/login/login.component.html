@@ -16,7 +16,7 @@
                 <div class="clearfix"></div>
             </div>
             <div class="BIOSLoginPsw"> <span class=" float-left">Password</span>
-                  <input type="{{loginFormObj.showPassword ? 'text' : 'password'}}" class="form-control float-left" 
+                  <input type="{{loginFormObj.showPassword ? 'text' : 'password'}}" class="form-control float-left"  maxlength="42"
                   #loginPassword="ngModel" [class]="loginForm.submitted && loginPassword.errors && loginPassword.errors.required ? 'errorMsgBox form-control float-left':'form-control float-left'" 
                   [(ngModel)]="loginFormObj.password" required name="password" id="password" aria-describedby="" type="Password" placeholder="Password">
                   <span class="password_eye showpwd" (click)="loginFormObj.showPassword = !loginFormObj.showPassword"><i [class]="!loginFormObj.showPassword ? 'fa fa-eye':'fa fa-eye-slash'"></i></span>
