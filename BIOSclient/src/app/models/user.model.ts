@@ -2,15 +2,15 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class User {
-  private _userId?: number;
-  private _loginName?: string;
-  private _userName?: string;
-  private _userPassword?: string;
-  private _userRole?: string;
-  private _IsActive?: string;
+
 
   constructor(
-    
+    private _userId?: number,
+    private _loginName?: string,
+    private _userName?: string,
+    private _userPassword?: string,
+    private _userRole?: string,
+    private _IsActive?: string,
   ) { }
 
   get userId(): number {
