@@ -28,13 +28,17 @@ public class Spare implements Serializable{
 	@Column(name="SPARE_NAME",length=100)
 	private String spareName;
 	
+	@Column(name="SPARE_PRICE",length=10)
+	private int sparePrice;
+	
 	public Spare() {
 
 	}
 
-	public Spare(int spareId, String spareName) {
+	public Spare(int spareId, String spareName, int sparePrice) {
 		this.spareId = spareId;
 		this.spareName = spareName;
+		this.sparePrice = sparePrice;
 	}
 
 	public int getSpareId() {
@@ -53,4 +57,16 @@ public class Spare implements Serializable{
 		this.spareName = spareName;
 	}
 
+	public int getsparePrice() {
+		return sparePrice;
+	}
+
+	public void setsparePrice(int sparePrice) {
+		this.sparePrice = sparePrice;
+	}
+
+	@Override
+	public String toString() {
+		return "Spare [spareId=" + spareId + ", spareName=" + spareName + ", sparePrice=" + sparePrice + "]";
+	}
 }
