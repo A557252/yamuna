@@ -20,7 +20,7 @@ import com.bios.portal.entities.Spare;
  */
 
 @Entity
-@Table (name = "PACKAGE")
+@Table (name = "VWPACKAGE")
 public class Package implements Serializable{
 
 	/**

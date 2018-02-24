@@ -40,7 +40,7 @@ public class UserController {
 	    public @ResponseBody ResponseEntity < ? > userLogin(@RequestBody User user) {
 	        try {
 	            if (usrSer.findUser(user)) {
-	                log.info("User Logged In Successfully " + user.getUserName());
+	                log.info("User Logged In Successfully " + user.getLoginName());
 	                return new ResponseEntity < String > (Constants.SUCCESS_STATUS + Constants.LOGIN_SUCCESS, HttpStatus.OK);
 	            } else {
 	                log.error("User Log In Failed" + user.getUserName());
