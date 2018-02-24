@@ -4,11 +4,11 @@
       <span>VIN</span>
   </div>
   <div class="col-md-3 col-xs-10 align-center">
-      <input type="text" class="vin_input" minlength="17" required maxlength="17" size="17" name="vinNumber" 
-      #vinNumberRef="ngModel" [(ngModel)]="vinNumber"/><br/>
+      <input type="text" class="vin_input" minlength="17" required maxlength="17" size="17" 
+      name="vinNumber" #vinNumberRef="ngModel" [(ngModel)]="vinNumber"/><br/>
       <span class="vin_input_text">(VIN number should be 17 characters.)</span>
       <div class="clearfix"></div>
-      <span *ngIf="searchForm.submitted && (vinNumberRef.errors || vinNumberRef.errors.required || vinNumberRef.errors.inValid)" class="vin_input_text errorMsg">Invalid VIN number</span>
+      <span *ngIf="searchForm.submitted && !vinNumber && (vinNumberRef.errors || vinNumberRef.errors.required || vinNumberRef.errors.inValid)" class="vin_input_text errorMsg">Invalid VIN number</span>
   </div>
   <div class="col-md-2 col-scol-xs-12">
       <button type="submit" class="btn btn-default search_button">
