@@ -1,7 +1,7 @@
 export class Constants {
 
     public static URL = {
-        host_url: 'http://localhost:9000',
+        host_url: 'http://10.87.201.73:9000',
         packages_url: '/BIOS/packagess?vin=',
         inquiry_url: '/BIOS/inquiries?vin=',
         login_url: '/BIOS/userService/login'
