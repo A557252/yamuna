@@ -23,16 +23,16 @@ import com.bios.portal.services.PackageService;
 
 @RestController
 @RequestMapping("/BIOS/packageService")
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 public class PackageController {
 
 	private static Logger log = Logger.getLogger(PackageController.class);
 	
 	@Autowired
-	PackageService pacSer;
+	private PackageService pacSer;
 	
 	@Autowired
-	CarService carSer;
+	private CarService carSer;
 	
 	@RequestMapping(value = "/getVinPackages", method = RequestMethod.GET, produces =MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody ResponseEntity<?> getPackages(@RequestParam ("vin") String vin )

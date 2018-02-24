@@ -21,13 +21,13 @@ import com.bios.portal.utils.Constants;
 
 @RestController
 @RequestMapping("/BIOS/userService")
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
 
 	private static Logger log = Logger.getLogger(UserController.class);
 	
 	@Autowired
-	UserService usrSer;
+	private UserService usrSer;
 	
 	@RequestMapping(value = "/healthCheck", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody ResponseEntity< ? > checkHealth()
@@ -43,7 +43,7 @@ public class UserController {
 	                log.info("User Logged In Successfully " + user.getLoginName());
 	                return new ResponseEntity < String > (Constants.SUCCESS_STATUS + Constants.LOGIN_SUCCESS, HttpStatus.OK);
 	            } else {
-	                log.error("User Log In Failed" + user.getUserName());
+	                log.error("User Log In Failed" + user.getLoginName());
 	                return new ResponseEntity < String > (Constants.FAILURE_STATUS + Constants.LOGIN_FAILURE_NO_USER, HttpStatus.NOT_FOUND);
 	            }
 	        } catch (Exception e) {
@@ -57,4 +57,20 @@ public class UserController {
 	        log.info("User Logged Out Successfully");
 	        return new ResponseEntity < String > (Constants.SUCCESS_STATUS + Constants.LOGOUT_FAIL, HttpStatus.OK);
 	    }
+	    
+	    /*@RequestMapping(value = "/addUser", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	    public @ResponseBody ResponseEntity < ? > insertUser(@RequestBody User user) {
+	        try {
+	            if (usrSer.addUser(user)) {
+	                log.info("User Added Successfully " + user.getLoginName());
+	                return new ResponseEntity < String > (Constants.SUCCESS_STATUS + Constants.INSERTED_SUCCESS, HttpStatus.OK);
+	            } else {
+	                log.error("User Addition Failed" + user.getLoginName());
+	                return new ResponseEntity < String > (Constants.FAILURE_STATUS + Constants.INSERTED_FAILURE, HttpStatus.NOT_FOUND);
+	            }
+	        } catch (Exception e) {
+	            log.error("User Addition Failed" + e.getMessage());
+	            return new ResponseEntity < String > (Constants.FAILURE_STATUS + Constants.INSERTED_FAILURE, HttpStatus.BAD_REQUEST);
+	        }
+	    }*/
 }
