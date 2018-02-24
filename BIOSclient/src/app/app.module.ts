@@ -19,7 +19,7 @@ import { User } from './models/user.model';
 import { UserService } from './services/UserService';
 
 const appRoutes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'dashboard', component: MainComponent },
   { path: 'login', component: LoginComponent }
 ];
