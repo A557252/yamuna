@@ -31,8 +31,8 @@ export class SearchComponent implements OnInit {
       console.log(resError);
     });
     // if service is offline use below data for  //dev
-    this.packagesArray = JSON.parse(JSON.stringify(Constants.json[0])).packages;
-    this.broadcaster.broadcast('updatePackages', this.packagesArray);
+    // this.packagesArray = JSON.parse(JSON.stringify(Constants.json[0])).packages;
+    // this.broadcaster.broadcast('updatePackages', this.packagesArray);
   }
 
   getInquiries(vinNumber){
