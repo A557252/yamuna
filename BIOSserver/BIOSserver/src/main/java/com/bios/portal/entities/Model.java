@@ -1,7 +1,6 @@
 package com.bios.portal.entities;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,17 +26,13 @@ public class Model implements Serializable{
 	private int modelId;
 	
 	@Column(name="MODEL_NAME")
-	private int modelName;
-	
-	//List<Package> packages;
-	
+	private String modelName;	
 	
 	public Model() {
 
 	}
 
-
-	public Model(int modelId, int modelName) {
+	public Model(int modelId, String modelName) {
 		this.modelId = modelId;
 		this.modelName = modelName;
 	}
@@ -53,27 +48,13 @@ public class Model implements Serializable{
 	}
 
 
-	public int getModelName() {
+	public String getModelName() {
 		return modelName;
 	}
 
 
-	public void setModelName(int modelName) {
+	public void setModelName(String modelName) {
 		this.modelName = modelName;
 	}
-	/*
-	public List<Package> getPackages() {
-		return packages;
-	}
-
-	public void setPackages(List<Package> packages) {
-		this.packages = packages;
-	}*/
-
-	/*@Override
-	public String toString() {
-		return "Model [modelId=" + modelId + ", modelName=" + modelName
-				+ ", packages=" + packages + "]";
-	}*/
 	
 }

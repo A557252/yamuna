@@ -27,6 +27,9 @@ public class User implements Serializable{
 	@Column(name="USER_NAME",length=50)
 	private String userName;
 	
+	@Column(name="LOGIN_NAME",length=50)
+	private String loginName;
+	
 	@Column(name="USER_PWD",length=100)
 	private String userPassword;
 	
@@ -40,10 +43,11 @@ public class User implements Serializable{
 		
 	}
 
-	public User(int userId, String userName, String userPassword, String userRole,
+	public User(int userId, String userName, String loginName, String userPassword, String userRole,
 			String isActive) {
 		this.userId = userId;
 		this.userName = userName;
+		this.loginName = loginName;
 		this.userPassword = userPassword;
 		this.userRole = userRole;
 		IsActive = isActive;
@@ -63,6 +67,14 @@ public class User implements Serializable{
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public String getLoginName() {
+		return loginName;
+	}
+
+	public void setLoginName(String loginName) {
+		this.loginName = loginName;
 	}
 
 	public String getUserPassword() {
@@ -91,7 +103,7 @@ public class User implements Serializable{
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", userName=" + userName + ", userPassword=" + userPassword + ", userRole="
-				+ userRole + ", IsActive=" + IsActive + "]";
+		return "User [userId=" + userId + ", userName=" + userName + ", loginName=" + loginName + ", userPassword="
+				+ userPassword + ", userRole=" + userRole + ", IsActive=" + IsActive + "]";
 	}
 }

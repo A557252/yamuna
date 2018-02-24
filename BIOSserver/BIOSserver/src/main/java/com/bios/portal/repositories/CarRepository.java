@@ -4,14 +4,11 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.bios.portal.entities.User;
-
+import com.bios.portal.entities.Car;
 /**
  * Author @ Tushar Upadhyay
  */
 
-public interface UserRepository extends JpaRepository<User,Integer>{
-
-	public List<User> findByLoginName(String loginName);
-	
+public interface CarRepository extends JpaRepository<Car,Integer>{
+	public List<Car> findByVin(String vin);
 }

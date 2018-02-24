@@ -2,13 +2,16 @@ package com.bios.portal.entities;
 
 import java.io.Serializable;
 import java.util.List;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
+import javax.persistence.JoinColumn;
 import com.bios.portal.entities.Maintenance;
 import com.bios.portal.entities.Spare;
 
@@ -42,24 +45,34 @@ public class Package implements Serializable{
 	@Column(name="IS_ACTIVE",length=1)
 	private String isActive;
 	
-	//List<Spare> spareParts;
-	//List <Maintenance> labourPositions;
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "package_spare", joinColumns = { @JoinColumn(name = "package_id") }, inverseJoinColumns = { @JoinColumn(name = "spare_id") })
+	List<Spare> spareParts;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "package_maintenance", joinColumns = { @JoinColumn(name = "package_id") }, inverseJoinColumns = { @JoinColumn(name = "lposition_id") })
+	List <Maintenance> labourPositions;
+	
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "car_package", joinColumns = { @JoinColumn(name = "package_id") }, inverseJoinColumns = { @JoinColumn(name = "car_id") })
+	List <Car> car;
 	
 	public Package() {
 
 	}
 
-	public Package(int packageId, String packageName, int price,
-			String description, String isActive, List<Spare> spareParts,
-			List<Maintenance> labourPositions) {
+	public Package(int packageId, String packageName, int price, String description, String isActive,
+			List<Spare> spareParts, List<Maintenance> labourPositions, List<Car> car) {
 		this.packageId = packageId;
 		this.packageName = packageName;
 		this.price = price;
 		this.description = description;
 		this.isActive = isActive;
-		//this.spareParts = spareParts;
-		//this.labourPositions = labourPositions;
+		this.spareParts = spareParts;
+		this.labourPositions = labourPositions;
+		this.car = car;
 	}
+
 
 	public int getPackageId() {
 		return packageId;
@@ -95,7 +108,7 @@ public class Package implements Serializable{
 		this.description = description;
 	}
 
-	/*public List<Spare> getSpareParts() {
+	public List<Spare> getSpareParts() {
 		return spareParts;
 	}
 
@@ -109,7 +122,7 @@ public class Package implements Serializable{
 
 	public void setLabourPositions(List<Maintenance> labourPositions) {
 		this.labourPositions = labourPositions;
-	}*/
+	}
 
 	public String getIsActive() {
 		return isActive;
@@ -118,17 +131,4 @@ public class Package implements Serializable{
 	public void setIsActive(String isActive) {
 		this.isActive = isActive;
 	}
-
-	/*@Override
-	public String toString() {
-		return "Package [packageId=" + packageId + ", packageName="
-				+ packageName + ", price=" + price + ", description="
-				+ description + ", isActive=" + isActive + ", spareParts="
-				+ spareParts + ", labourPositions=" + labourPositions + "]";
-	}*/
-
-	
-
-	
-	
 }

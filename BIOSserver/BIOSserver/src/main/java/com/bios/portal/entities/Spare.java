@@ -1,7 +1,6 @@
 package com.bios.portal.entities;
 
 import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,7 +27,7 @@ public class Spare implements Serializable{
 	
 	@Column(name="SPARE_NAME",length=100)
 	private String spareName;
-		
+	
 	public Spare() {
 
 	}
@@ -46,17 +45,12 @@ public class Spare implements Serializable{
 		this.spareId = spareId;
 	}
 
-	public String geSpareName() {
+	public String getSpareName() {
 		return spareName;
 	}
 
 	public void setSpareName(String spareName) {
 		this.spareName = spareName;
 	}
-	
-	@Override
-	public String toString() {
-		return "Spare [spareId=" + spareId + ", spareName=" + spareName + "]";
-	}
-	
+
 }

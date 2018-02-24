@@ -1,16 +1,11 @@
 package com.bios.portal.entities;
 
 import java.io.Serializable;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import com.bios.portal.entities.Maintenance;
-import com.bios.portal.entities.Spare;
 
 /**
  * Author @ Tushar Upadhyay

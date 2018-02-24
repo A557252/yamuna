@@ -1,7 +1,6 @@
 package com.bios.portal.entities;
 
 import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,7 +28,6 @@ public class Maintenance implements Serializable{
 	@Column(name="LPOSITION_NAME",length=100)
 	private String lpositionName;
 	
-	
 	public Maintenance() {
 
 	}
@@ -55,7 +53,7 @@ public class Maintenance implements Serializable{
 	public void setLpositionName(String lpositionName) {
 		this.lpositionName = lpositionName;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "LabourPosition [lpositionId=" + lpositionId + ", lpositionName=" + lpositionName + "]";
