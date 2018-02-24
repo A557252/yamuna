@@ -4,5 +4,6 @@
 .errorMsgBox {border: 1px solid red;}
 .errorMsg {color: red !important;}
 .align-right{text-align: right;}
+.pull-right{text-align: right;}
 a {cursor: pointer;}
 .align-center {text-align: center;}
