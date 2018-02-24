@@ -23,7 +23,7 @@ import com.bios.portal.services.PackageService;
 
 @RestController
 @RequestMapping("/BIOS/packageService")
-//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class PackageController {
 
 	private static Logger log = Logger.getLogger(PackageController.class);

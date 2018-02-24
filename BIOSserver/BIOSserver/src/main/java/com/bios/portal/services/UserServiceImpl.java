@@ -16,7 +16,7 @@ import com.bios.portal.repositories.UserRepository;
 public class UserServiceImpl implements UserService{
 
 	@Autowired
-	UserRepository usrRepo;
+	private UserRepository usrRepo;
 	
 	@Transactional
 	@Override
