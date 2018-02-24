@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
   //  }
    this._usrSer.loginUser(data).then((res) => {
     if (res.Status) {
+      UtilFunctions.setLocalStorage('userDetail','horst');
       this.router.navigate(['/dashboard']);
     } else {
       this.submitted = true;
