@@ -4,8 +4,8 @@ export class Constants {
         host_url_home: 'http://10.87.201.73:9000',
         host_url: 'http://angularapp.apps.eu01.cf.canopy-cloud.com/',
         packages_url: '/BIOS/packageService/getVinPackages?vin=',
-        inquiry_url: '/BIOS/inquiries?vin=',
-        login_url: '/BIOS/userService/login'
+        inquiry_url: 'BIOS/packageService/getAllServices',
+        login_url: '/BIOS/userService/login', 
     };
     public static isDev = true;
 
