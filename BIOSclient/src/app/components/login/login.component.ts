@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
   }
 
  loginUser() {
-   debugger
    if(Object.keys(this.loginFormObj).length <= 0) {
       return false;
    }
