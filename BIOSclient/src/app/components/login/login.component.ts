@@ -27,10 +27,10 @@ export class LoginComponent implements OnInit {
     this.loginFormObj = new User();
   }
  loginUser(data) {
-  //  if(Object.keys(this.loginFormObj).length <= 0) {
+  //  if(Object.keys(data).length <= 0) {
   //     return false;
   //  }
-  //  if (this.loginFormObj.loginName == 'horst' && this.loginFormObj.userPassword == 'abc123') {
+  //  if (data.userName == 'horst' && data.userPassword == 'abc123') {
   //     UtilFunctions.setLocalStorage('userDetail','horst');
   //     this.router.navigate(['/dashboard']);
   //  } else {
