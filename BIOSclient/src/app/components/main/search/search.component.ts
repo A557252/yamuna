@@ -23,13 +23,13 @@ export class SearchComponent implements OnInit {
   }
 
   serachByVinNumber(vinNumber) {
-    this._inquiryService.vinSearch(vinNumber).subscribe((res) => {
-      console.log(res);
-      this.packagesArray = res;
-      this.broadcaster.broadcast('updatePackages', this.packagesArray);
-    }, (resError) => {
-      console.log(resError);
-    });
+    // this._inquiryService.vinSearch(vinNumber).subscribe((res) => {
+    //   console.log(res);
+    //   this.packagesArray = res;
+    //   this.broadcaster.broadcast('updatePackages', this.packagesArray);
+    // }, (resError) => {
+    //   console.log(resError);
+    // });
     // if service is offline use below data for  //dev
     this.packagesArray = Constants.json;
     this.broadcaster.broadcast('updatePackages', this.packagesArray);

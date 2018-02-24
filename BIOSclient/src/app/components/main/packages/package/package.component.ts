@@ -13,7 +13,7 @@ export class PackageComponent implements OnInit {
   selectedPackageArray: Array<any> = [];
   totalAmount = 0;
 
-  constructor(private _inquiryService: InquiryService, private brodcaster: Broadcaster) { }
+  constructor(private _inquiryService: InquiryService, private brodcaster: Broadcaster) {}
 
   ngOnInit() {
   }

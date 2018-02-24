@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class User {
+  private _userId?: number;
+  private _loginName?: string;
+  private _userName?: string;
+  private _userPassword?: string;
+  private _userRole?: string;
+  private _IsActive?: string;
 
   constructor(
-    private _userId?: number,
-    private _userFullName?: string,
-    private _userName?: string,
-    private _userPassword?: string,
-    private _userRole?: string,
-    private _IsActive?: string
+    
   ) { }
 
   get userId(): number {
@@ -20,12 +21,12 @@ export class User {
     this._userId = userId;
   }
 
-  get userFullName(): string {
-    return this._userFullName;
+  get loginName(): string {
+    return this._loginName;
   }
 
-  set userFullName(userFullName: string) {
-    this._userFullName = userFullName;
+  set loginName(loginName: string) {
+    this._loginName = loginName;
   }
 
   get userName(): string {

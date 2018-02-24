@@ -21,12 +21,7 @@ export class PackagesComponent implements OnInit {
 
     this.broadcaster.on<string>('updatePackages')
     .subscribe(message => {
-      console.log('updatePackages');
       this.packagesArray = message;
     });
-
-   
   }
-
-
 }

@@ -6,53 +6,40 @@ export class Constants {
         inquiry_url: '/BIOS/inquiries?vin=',
         login_url: '/BIOS/userService/login'
     };
+    public static isDev = true;
 
-    public static json = [
-        {
-          'packageId': 1,
-          'packageName': 'Basic package',
-          'price': 11,
-          'description': 'Basic package description',
-          'spareParts': [
-            {
-              'spareId': 5,
-              'name': 'engine valve'
-            },
-            {
-              'spareId': 5,
-              'name': 'engine valve'
+    public static json = 
+    [
+      {"carId":1,
+        "vin":"WVWZZZ1J3W000001",
+        "model":{
+          "modelId":1,
+          "modelName":"polo"
+        },"packages":[
+          {"packageId":1,
+          "packageName":"Basic package",
+          "price":11,
+          "description":"Basic package description",
+          "isActive":"Y",
+          "spareParts":[
+            {"spareId":5,"spareName":"engine valve"}
+            ,{"spareId":5,"spareName":"engine valve"}],
+            "labourPositions":[
+              {"lpositionId":5,"lpositionName":"wheel balancing"},
+              {"lpositionId":5,"lpositionName":"wheel balancing"}]},
+              {"packageId":2,
+              "packageName":"Summer package",
+              "price":22,
+              "description":"Summer package description",
+              "isActive":"Y",
+              "spareParts":[{"spareId":3,"spareName":"rear view mirror"}],
+              "labourPositions":[{"lpositionId":3,"lpositionName":"internal washing"}]},
+              {"packageId":4,"packageName":"15.000 km Service inspection","price":44,
+              "description":"15.000 km Service inspection description","isActive":"Y",
+              "spareParts":[],"labourPositions":[]}]
             }
-          ],
-          'labourPositions': [
-            {
-              'labourPositionId': 5,
-              'workDescription': 'wheel balancing'
-            },
-            {
-              'labourPositionId': 5,
-              'workDescription': 'wheel balancing'
-            }
-          ]
-        },
-        {
-          'packageId': 2,
-          'packageName': 'Summer package',
-          'price': 22,
-          'description': 'Summer package description',
-          'spareParts': [
-            {
-              'spareId': 3,
-              'name': 'rear view mirror'
-            }
-          ],
-          'labourPositions': [
-            {
-              'labourPositionId': 3,
-              'workDescription': 'internal washing'
-            }
-          ]
-        }
-      ];
+        ] 
+    
 
       public static inquiries = [
         {
