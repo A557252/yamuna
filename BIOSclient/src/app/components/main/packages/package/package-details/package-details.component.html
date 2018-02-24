@@ -19,7 +19,7 @@
                 <td>
                   <div class="row" *ngFor="let sparepart of packageObj.spareParts; let last = last">
                     <div class="col-md-12">
-                      {{sparepart.name}}
+                      {{sparepart.spareName}}
                       <hr *ngIf="!last"/>
                     </div>
                   </div>
@@ -27,7 +27,7 @@
                 <td>
                   <div class="row" *ngFor="let labourPosition of packageObj.labourPositions; let last = last">
                     <div class="col-md-12">
-                      {{labourPosition.workDescription}}
+                      {{labourPosition.lpositionName}}
                       <hr *ngIf="!last"/>
                     </div>
                   </div>
