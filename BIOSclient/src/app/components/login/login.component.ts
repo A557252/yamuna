@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     this.loginFormObj = {};
      this.loginFormObj.loginFormError = {
       hasError: true,
-      errorMsg: 'UserName or password is in correct'
+      errorMsg: 'Username or Password is incorrect'
      };
    }
   //  this._usrSer.loginUser(data).then((res) => {
