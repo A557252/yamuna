@@ -15,14 +15,14 @@ import { PackageComponent } from './components/main/packages/package/package.com
 import { PackageDetailsComponent } from './components/main/packages/package/package-details/package-details.component';
 import { OtherPackageComponent } from './components/main/packages/other-package/other-package.component';
 import { Broadcaster } from './utils/brodcaster';
-import { User } from './models/user.model';
 import { UserService } from './services/UserService';
 import { InquiriesComponent } from './components/main/inquiries/inquiries.component';
 import { InquiryComponent } from './components/main/inquiries/inquiry/inquiry.component';
+import { AuthGuardService } from './utils/authGuardService';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'dashboard', component: MainComponent },
+  { path: 'dashboard', component: MainComponent, canActivate: [AuthGuardService] },
   { path: 'login', component: LoginComponent }
 ];
 
@@ -46,7 +46,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule
   ],
-  providers: [ User, InquiryService, Broadcaster, UserService ],
+  providers: [ InquiryService, Broadcaster, UserService, AuthGuardService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

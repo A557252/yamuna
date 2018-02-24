@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   // user: User;
   loginFormObj: User;
   errorObj:any = {};
+  showPassword: any = false;
   constructor(private router: Router, private _usrSer: UserService) {
     this.initializeUser();
    }
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   initializeUser(){
-    this.loginFormObj = new User();
+    this.loginFormObj = new User(0,'','','','','');
   }
  loginUser(data) {
   //  if(Object.keys(data).length <= 0) {

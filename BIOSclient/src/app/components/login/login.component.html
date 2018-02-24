@@ -3,7 +3,7 @@
     <div class="BIOSLoginSecHdr">login</div>
     <div class="BIOSLoginSecBox">
         <form id="loginForm" #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
-            <div class="alert alert-danger" *ngIf="!loginFormObj.userName && !loginFormObj.password && errorObj && errorObj.hasError">
+            <div class="alert alert-danger" *ngIf="!loginFormObj.userName && !loginFormObj.userPassword && errorObj && errorObj.hasError">
                 {{errorObj.errorMsg}}
             </div>
             <!-- <div  class="errorMsg"></div> -->
@@ -16,10 +16,10 @@
                 <div class="clearfix"></div>
             </div>
             <div class="BIOSLoginPsw"> <span class=" float-left">Password</span>
-                  <input type="{{loginFormObj.showPassword ? 'text' : 'password'}}" class="form-control float-left"  maxlength="42"
+                  <input type="{{showPassword ? 'text' : 'password'}}" class="form-control float-left"  maxlength="42"
                   #loginPassword="ngModel" [class]="loginForm.submitted && loginPassword.errors && loginPassword.errors.required ? 'errorMsgBox form-control float-left':'form-control float-left'" 
                   [(ngModel)]="loginFormObj.userPassword" required name="userPassword" id="userPassword" aria-describedby="" type="Password" placeholder="Password">
-                  <span class="password_eye showpwd" (click)="loginFormObj.showPassword = !loginFormObj.showPassword"><i [class]="!loginFormObj.showPassword ? 'fa fa-eye':'fa fa-eye-slash'"></i></span>
+                  <span class="password_eye showpwd" (click)="showPassword = !showPassword"><i [class]="!showPassword ? 'fa fa-eye':'fa fa-eye-slash'"></i></span>
                   <!--error massage text place here-->
                   <div class="errorMsg" *ngIf="loginForm.submitted && loginPassword.errors && loginPassword.errors.required" class="errorMsg">This field is required</div>
                   <div class="clearfix"></div>

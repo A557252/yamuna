@@ -1,64 +1,24 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
 export class User {
 
+  public userId: number;
+  public loginName: string;
+  public userName: string;
+  public userPassword: string;
+  public userRole: string;
+  public IsActive: string;
 
   constructor(
-    private _userId?: number,
-    private _loginName?: string,
-    private _userName?: string,
-    private _userPassword?: string,
-    private _userRole?: string,
-    private _IsActive?: string,
-  ) { }
+    userId: number, loginName: string, userName: string, userPassword: string, userRole: string, IsActive: string
+  ) {
+    this.userId = userId;
+    this.loginName = loginName;
+    this.userName = userName;
+    this.userPassword = userPassword;
+    this.userRole = userRole;
+    this.IsActive = IsActive;
+   }
 
-  get userId(): number {
-    return this._userId;
-  }
-
-  set userId(userId: number) {
-    this._userId = userId;
-  }
-
-  get loginName(): string {
-    return this._loginName;
-  }
-
-  set loginName(loginName: string) {
-    this._loginName = loginName;
-  }
-
-  get userName(): string {
-    return this._userName;
-  }
-
-  set userName(userName: string) {
-    this._userName = userName;
-  }
-
-  get userPassword(): string {
-    return this._userPassword;
-  }
-
-  set userPassword(userPassword: string) {
-    this._userPassword = userPassword;
-  }
-
-  get userRole(): string {
-    return this._userRole;
-  }
-
-  set userRole(userRole: string) {
-    this._userRole = userRole;
-  }
-
-  get IsActive(): string {
-    return this._IsActive;
-  }
-
-  set IsActive(IsActive: string) {
-    this._IsActive = IsActive;
-  }
 
 }
