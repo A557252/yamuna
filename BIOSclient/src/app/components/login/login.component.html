@@ -3,8 +3,8 @@
     <div class="BIOSLoginSecHdr">login</div>
     <div class="BIOSLoginSecBox">
         <form id="loginForm" #loginForm="ngForm" (ngSubmit)="loginUser()">
-            <div class="alert alert-danger" *ngIf="!loginFormObj.userName && !loginFormObj.password && loginFormObj.loginFormError && loginFormObj.loginFormError.hasError">
-                {{loginFormObj.loginFormError.errorMsg}}
+            <div class="alert alert-danger" *ngIf="!loginFormObj.userName && !loginFormObj.password && errorObj && errorObj.hasError">
+                {{errorObj.errorMsg}}
             </div>
             <!-- <div  class="errorMsg"></div> -->
             <div class="BIOSLoginUsrName"> <span class=" float-left">Username</span>
