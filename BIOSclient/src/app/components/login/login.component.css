@@ -19,3 +19,12 @@
     color: red;
   }
   
+.BIOSLoginSec { width:340px; margin:15% auto 0 auto;border: 1px solid #cfd7d9;}
+.BIOSLoginSecHdr {font-size:16px; color:#000000; text-transform:capitalize; padding: 7px 0 10px 22px;}
+.BIOSLoginSecBox { background-color:#fdfbfc; border:1px solid #e1e6e7; width:100%; padding:24px 24px 20px 20px;}
+.BIOSLoginUsrName, .BIOSLoginPsw { padding:0 0 11px 0;}
+.BIOSLoginUsrName span, .BIOSLoginPsw span, .BIOSLoginBtn span { width:25%;}
+.BIOSLoginUsrName input, .BIOSLoginPsw input {width:75%; min-height: 20px; padding: 0 5px; font-size: 12px; border-radius: 0;}
+/* .BIOSLoginPsw input { width: 100%}; */
+.input-group-addon.password_eye { cursor: pointer!important;};
+.BIOSLoginBtn button { background-color:#fdfeff; color:#25353e; padding: 0 5px; font-size: 12px;  -moz-box-shadow:1px 1px 3px 1px #ccc; -webkit-box-shadow:1px 1px 3px 1px #ccc; box-shadow:1px 1px 3px 1px #ccc;}

@@ -1,36 +1,34 @@
-<div class="container-fluid">
-  <div class="form">
-    <div class="centerPad">
-      <h1 class="center">Login</h1>
-      <br>
-      <form class="form-inline" #userlogin="ngForm" (ngSubmit)="loginUser(userlogin.value)" novalidate>
-        <div>
-          <div class="form-group">
-            <input id="userName" name="userName" type="text" class="form-control" [(ngModel)]="user.userName" placeholder="Enter DAS ID"
-              required #userName="ngModel">
-            <div class="red" *ngIf="userName.invalid && (userName.dirty || userName.touched)">
-              User Name is required.
+  <!--login section start here-->
+  <div class="BIOSLoginSec">
+    <div class="BIOSLoginSecHdr">login</div>
+    <div class="BIOSLoginSecBox">
+        <form id="loginForm" #loginForm="ngForm" (ngSubmit)="loginUser()">
+            <div class="alert alert-danger" *ngIf="!loginFormObj.userName && !loginFormObj.password && loginFormObj.loginFormError && loginFormObj.loginFormError.hasError">
+                {{loginFormObj.loginFormError.errorMsg}}
             </div>
-          </div>
-          <br>
-          <div class="form-group">
-            <input id="userPassword" name="userPassword" type="userPassword" class="form-control" [(ngModel)]="user.userPassword" placeholder="Enter password"
-              required #userPassword="ngModel">
-            <span class="red" *ngIf="userPassword.invalid && (userPassword.dirty || userPassword.touched)">
-              Password is required.
-            </span>
-          </div>
-          <br>
-          <div class="form-group">
-            <div>
-              <button type="submit" class="btn btn-default" [disabled]="!userlogin.form.valid">Login</button>
+            <!-- <div  class="errorMsg"></div> -->
+            <div class="BIOSLoginUsrName"> <span class=" float-left">Username</span>
+                <input #userName="ngModel" 
+                [class]="loginForm.submitted && userName.errors && userName.errors.required ? 'errorMsgBox form-control float-left':'form-control float-left'" 
+                [(ngModel)]="loginFormObj.userName" required name="userName" id="userName" aria-describedby="" type="Username" placeholder="Username">
+                <!--error massage text place here-->
+                <div class="errorMsg" *ngIf="loginForm.submitted && userName.errors && userName.errors.required" class="errorMsg">This field is required</div>
+                <div class="clearfix"></div>
             </div>
-          </div>
-          <span class="red" *ngIf="submitted">
-            DAS ID or Password is Wrong. Please enter Correct Credentials.
-          </span>
-        </div>
-      </form>
+            <div class="BIOSLoginPsw"> <span class=" float-left">Password</span>
+                  <input type="{{loginFormObj.showPassword ? 'text' : 'password'}}" class="form-control float-left" 
+                  #loginPassword="ngModel" [class]="loginForm.submitted && loginPassword.errors && loginPassword.errors.required ? 'errorMsgBox form-control float-left':'form-control float-left'" 
+                  [(ngModel)]="loginFormObj.password" required name="password" id="password" aria-describedby="" type="Password" placeholder="Password">
+                  <!-- <span class="password_eye" (click)="loginFormObj.showPassword = !loginFormObj.showPassword"><i [class]="!loginFormObj.showPassword ? 'fa fa-eye':'fa fa-eye-slash'"></i></span> -->
+                  <!--error massage text place here-->
+                  <div class="errorMsg" *ngIf="loginForm.submitted && loginPassword.errors && loginPassword.errors.required" class="errorMsg">This field is required</div>
+                  <div class="clearfix"></div>
+            </div>
+            <div class="BIOSLoginBtn"> <span class=" float-left">&nbsp;</span>
+                <button type="submit" class="btn btn-default" title="Login" >Login</button>
+                <div class="clearfix"></div>
+            </div>
+          </form>
     </div>
   </div>
-</div>
+  <!--login section end here--> 

@@ -14,3 +14,12 @@
 .inquiries {
     color: blue;
 }
+.userDetail {
+    font-size: 22px;
+}
+.userDetail:hover {
+    text-decoration: underline;
+}
+.userDetail .fa.fa-user {
+    padding-right: 5px;
+}

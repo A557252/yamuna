@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+.float-left{float:left!important}
+.float-right{float:right!important}
+.errorMsgBox {border: 1px solid red;}
+.errorMsg {color: red; padding-left: 25%;}
+.align-right{text-align: right;}
+a {
+    cursor: pointer;
+}

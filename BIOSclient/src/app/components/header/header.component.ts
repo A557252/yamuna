@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UtilFunctions } from '../../utils/utilFunctions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  userDetailObj:any = {};
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    //this.userDetailObj = UtilFunctions.getLocalStorage('userDetail');
   }
-
+  logout() {
+    UtilFunctions.clearLocalStorage();
+    this.router.navigateByUrl('/login');
+  }
+  isUserLoggedIn() {
+    this.userDetailObj = UtilFunctions.getLocalStorage('userDetail');
+    if (this.userDetailObj) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
