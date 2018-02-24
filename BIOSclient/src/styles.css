@@ -2,8 +2,7 @@
 .float-left{float:left!important}
 .float-right{float:right!important}
 .errorMsgBox {border: 1px solid red;}
-.errorMsg {color: red; padding-left: 25%;}
+.errorMsg {color: red !important;}
 .align-right{text-align: right;}
-a {
-    cursor: pointer;
-}
+a {cursor: pointer;}
+.align-center {text-align: center;}
