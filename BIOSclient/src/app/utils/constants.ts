@@ -6,6 +6,7 @@ export class Constants {
         packages_url: '/BIOS/packageService/getVinPackages?vin=',
         inquiry_url: 'BIOS/packageService/getAllServices',
         login_url: '/BIOS/userService/login', 
+        AUTHENTICATE_URLS : ['dashboard']
     };
     public static isDev = true;
 
