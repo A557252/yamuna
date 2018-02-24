@@ -19,7 +19,7 @@
                   <input type="{{loginFormObj.showPassword ? 'text' : 'password'}}" class="form-control float-left" 
                   #loginPassword="ngModel" [class]="loginForm.submitted && loginPassword.errors && loginPassword.errors.required ? 'errorMsgBox form-control float-left':'form-control float-left'" 
                   [(ngModel)]="loginFormObj.password" required name="password" id="password" aria-describedby="" type="Password" placeholder="Password">
-                  <!-- <span class="password_eye" (click)="loginFormObj.showPassword = !loginFormObj.showPassword"><i [class]="!loginFormObj.showPassword ? 'fa fa-eye':'fa fa-eye-slash'"></i></span> -->
+                  <span class="password_eye showpwd" (click)="loginFormObj.showPassword = !loginFormObj.showPassword"><i [class]="!loginFormObj.showPassword ? 'fa fa-eye':'fa fa-eye-slash'"></i></span>
                   <!--error massage text place here-->
                   <div class="errorMsg" *ngIf="loginForm.submitted && loginPassword.errors && loginPassword.errors.required" class="errorMsg">This field is required</div>
                   <div class="clearfix"></div>

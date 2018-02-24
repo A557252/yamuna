@@ -28,3 +28,8 @@
 /* .BIOSLoginPsw input { width: 100%}; */
 .input-group-addon.password_eye { cursor: pointer!important;};
 .BIOSLoginBtn button { background-color:#fdfeff; color:#25353e; padding: 0 5px; font-size: 12px;  -moz-box-shadow:1px 1px 3px 1px #ccc; -webkit-box-shadow:1px 1px 3px 1px #ccc; box-shadow:1px 1px 3px 1px #ccc;}
+
+.showpwd{
+  float: right;
+  width: 16px !important;
+}
