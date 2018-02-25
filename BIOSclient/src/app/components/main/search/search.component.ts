@@ -14,6 +14,7 @@ export class SearchComponent implements OnInit {
   vinNumber;
 
   packagesArray: Package[] = [];
+  extraServices: Package[] = [];
   inquiryArray: Array<any> = [];
 
   constructor(private _inquiryService: InquiryService, private broadcaster: Broadcaster ) { }
@@ -27,12 +28,23 @@ export class SearchComponent implements OnInit {
       console.log(res);
       this.packagesArray = res[0].packages;
       this.broadcaster.broadcast('updatePackages', this.packagesArray);
+      this.broadcaster.broadcast('updateAmount', 0);
     }, (resError) => {
       console.log(resError);
     });
+
+    this._inquiryService.getExtraServices().subscribe((res) => {
+      console.log(res);
+      this.extraServices = res;
+      this.broadcaster.broadcast('extraServices', this.extraServices);
+    }, (resError) => {
+      console.log(resError);
+    });
+    
     // if service is offline use below data for  //dev
     // this.packagesArray = JSON.parse(JSON.stringify(Constants.json[0])).packages;
     // this.broadcaster.broadcast('updatePackages', this.packagesArray);
+    // this.getExtraServices();
   }
 
   getInquiries(vinNumber){
@@ -41,11 +53,21 @@ export class SearchComponent implements OnInit {
       console.log(res);
       this.inquiryArray = res;
       this.broadcaster.broadcast('updateInquiries', this.inquiryArray);
-    }, (resError) => {
+  }, (resError) => {
       console.log(resError);
     });
     this.inquiryArray = Constants.inquiries;
     this.broadcaster.broadcast('updateInquiries', this.inquiryArray);
+  }
+
+  getExtraServices(){
+    this._inquiryService.getExtraServices().subscribe((res) => {
+      console.log(res);
+      this.extraServices = res;
+      this.broadcaster.broadcast('extraServices', this.extraServices);
+    }, (resError) => {
+      console.log(resError);
+    });
   }
 
 }

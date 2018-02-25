@@ -8,13 +8,18 @@
   <div class="col-md-2">
     <span class="packages"><b>Packages</b></span>
   </div>
-  <div class="col-md-10 align-right">
-      <a class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>Add Other Packages</a>
-  </div>
 </div>
 <!-- <app-package></app-package> -->
 <app-package [packagesArray]="packagesArray"></app-package>
-<!-- <app-other-package></app-other-package> -->
+<div class="row" >
+    <div class="col-md-2">
+      <span class="packages"><b>Other Services</b></span>
+    </div>
+    <!-- <div class="col-md-10 align-right">
+        <a class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>Add Other Packages</a>
+    </div> -->
+  </div>
+<app-other-package [extraServices]="extraServices"></app-other-package>
 <div class="row amount_row">
   <div class="col-md-2 col-xs-3">
     <button type="button" class="btn btn-default">Save</button>

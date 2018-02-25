@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Package } from '../../../share/package.model';
 import { InquiryService } from '../../../../services/inquiryService';
 import { Broadcaster } from '../../../../utils/brodcaster';
+import { SparePart } from '../../../share/spare-part.model';
 
 @Component({
   selector: 'app-other-package',
@@ -10,28 +11,40 @@ import { Broadcaster } from '../../../../utils/brodcaster';
 })
 export class OtherPackageComponent implements OnInit {
 
-  extraServices: any;
+  @Input() extraServices: Package[];
   extraServicesArray: Array<any> = [];
   totalAmount = 0;
   constructor(private _inquiryService: InquiryService, private brodcaster: Broadcaster) { }
 
   ngOnInit() {
-    this.brodcaster.on<string>('updatePackages')
-    .subscribe(message => {
-      this.extraServices = message;
+    this.brodcaster.on<string>('updateAmount')
+    .subscribe((message: any) => {
+        this.totalAmount = message;
+        console.log("this.totalAmount"+this.totalAmount);
     });
   }
 
-  selectService(selectedService, isSelectAll) {
-    if (selectedService.selected) {
+  selectSpare(selectedService, spareSpart) {
+    if (spareSpart.selected) {
       this.extraServicesArray.push(selectedService);
-      this.totalAmount += selectedService.price;
+      this.totalAmount += spareSpart.sparePrice;
     } else {
       this.extraServicesArray.splice(this.extraServicesArray.indexOf(selectedService), 1);
-      this.totalAmount -= selectedService.price;
+      this.totalAmount -= spareSpart.sparePrice;
     }
     // this._inquiryService.amount.emit(this.totalAmount);
     this.brodcaster.broadcast('updateAmount', this.totalAmount);
   }
 
+  selectLposition(selectedService, lposition) {
+    if (lposition.selected) {
+      this.extraServicesArray.push(selectedService);
+      this.totalAmount += lposition.lpositionPrice;
+    } else {
+      this.extraServicesArray.splice(this.extraServicesArray.indexOf(selectedService), 1);
+      this.totalAmount -= lposition.lpositionPrice;
+    }
+    // this._inquiryService.amount.emit(this.totalAmount);
+    this.brodcaster.broadcast('updateAmount', this.totalAmount);
+  }
 }
