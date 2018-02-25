@@ -1,26 +1,13 @@
-<div *ngIf="packagesArray.length>0">
-    <div class="row">
-        <div class="col-md-12">
-          <hr/>
-        </div>
-      </div>  
-<div class="row" >
-  <div class="col-md-2">
-    <span class="packages"><b>Packages</b></span>
-  </div>
-  <div class="col-md-10 align-right">
-      <a class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>Add Other Packages</a>
-  </div>
-</div>
+<div>
 <!-- <app-package></app-package> -->
 <app-package [packagesArray]="packagesArray"></app-package>
-<!-- <app-other-package></app-other-package> -->
-<div class="row amount_row">
+<app-other-package [extraServices]="extraServices"></app-other-package>
+<div class="row amount_row" *ngIf="packagesArray.length>0 || extraServices.length>0">
   <div class="col-md-2 col-xs-3">
     <button type="button" class="btn btn-default">Save</button>
   </div>
   <div class="col-md-2 col-md-offset-7 col-xs-offset-3 col-xs-4">
-    <span><b>Total amount</b></span>
+    <span style="float: right;"><b>Total amount</b></span>
   </div>
   <div class="col-md-1 col-xs-1">
     <span class="total_amount">&euro; {{totalAmount}}</span>

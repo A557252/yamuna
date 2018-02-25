@@ -10,8 +10,10 @@ import { Package } from '../../share/package.model';
 export class PackagesComponent implements OnInit {
 
   packagesArray: Package[] = [];
+  extraServices: Package[] = [];
   totalAmount: any = 0;
-
+  expand: boolean = false;
+  
   constructor(private broadcaster: Broadcaster) { }
 
   ngOnInit() {
@@ -23,6 +25,12 @@ export class PackagesComponent implements OnInit {
     this.broadcaster.on<string>('updatePackages')
     .subscribe( (message: any) => {
       this.packagesArray = message;
+    });
+
+    this.broadcaster.on<string>('extraServices')
+    .subscribe((message:any) => {
+        this.extraServices = message;
+        console.log('extraServices'+this.extraServices);
     });
   }
 }

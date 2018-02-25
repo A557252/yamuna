@@ -16,9 +16,15 @@ export class PackageComponent implements OnInit {
   constructor(private _inquiryService: InquiryService, private brodcaster: Broadcaster) {}
 
   ngOnInit() {
+    this.brodcaster.on<string>('updateAmount')
+    .subscribe((message: any) => {
+        this.totalAmount = message;
+        console.log("this.totalAmount"+this.totalAmount);
+    });
   }
 
   selectPackages(selectedPackage, isSelectAll) {
+    console.log(this.totalAmount);
     if (selectedPackage.selected) {
       this.selectedPackageArray.push(selectedPackage);
       this.totalAmount += selectedPackage.price;

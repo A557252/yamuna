@@ -1,17 +1,36 @@
-<div class="row">
+<div *ngIf="extraServices.length>0">
+<div class="row" >
+    <div class="col-md-2">
+      <span class="packages"><b>Other Services</b></span>
+    </div>
+    <div class="col-md-10 align-right" (click)="expand = !expand" style="cursor: pointer;">
+        <span [class]="!expand? 'glyphicon glyphicon-plus' : 'glyphicon glyphicon-minus'"></span> Add Other Services
+    </div>
+  </div>
+<div class="row" *ngIf="expand">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="table-responsive table-fixed">
             <table class="table packages_table">
                 <tbody>
                     <ng-container *ngFor="let service of extraServices">
-                        <tr>
-                            <td class="checkbox_td"><input type="checkbox" [(ngModel)]="service.selected" name="check" id="check" (ngModelChange)="selectService(service)"></td>
-                            <td (click)="service.expand = !service.expand">{{service.serviceName}}</td>
-                            <td class="align_right" (click)="service.expand = !service.expand"><span class="badge  badge-pill badge-primary rupee_badge">&euro; {{service.price}}</span><i [class]="service.expand ? 'fa fa-sort-up' : 'fa fa-sort-down'"></i></td>
-                        </tr>
+                        <ng-container *ngIf="service.spareParts.length>0">
+                            <tr *ngFor="let sparePart of service.spareParts">
+                                <td class="checkbox_td"><input type="checkbox" [(ngModel)]="sparePart.selected" name="check" id="check" (ngModelChange)="selectSpare(service,sparePart)"></td>
+                                <td>{{sparePart.spareName}}</td>
+                                <td class="align_right">&euro; {{sparePart.sparePrice}}</td>
+                            </tr>
+                        </ng-container>
+                        <ng-container *ngIf="service.labourPositions.length>0">
+                            <tr *ngFor="let lposition of service.labourPositions">
+                                <td class="checkbox_td"><input type="checkbox" [(ngModel)]="lposition.selected" name="check" id="check" (ngModelChange)="selectLposition(service,lposition)"></td>
+                                <td>{{lposition.lpositionName}}</td>
+                                <td class="align_right">&euro; {{lposition.lpositionPrice}}</td>    
+                            </tr>
+                        </ng-container>
                         </ng-container>
                 </tbody>
             </table>
         </div>
     </div>
+</div>
 </div>

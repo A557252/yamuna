@@ -32,5 +32,14 @@ export class InquiryService {
         })
         .catch(this._vinSearchErrorHandler);
     }
+
+    getExtraServices(){
+        return this._http.get(Constants.URL.host_url + Constants.URL.inquiry_url)
+        .map((response: Response) => {
+            const userResponse = response.json();
+            return userResponse;
+        })
+        .catch(this._vinSearchErrorHandler);
+    }
     
 }
