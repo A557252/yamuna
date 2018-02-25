@@ -1,10 +1,17 @@
 package com.bios.portal.entities;
 
 import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -46,12 +53,20 @@ public class Inquiry implements Serializable{
 	@Column(name="TITLE",length=50)
 	private String title;
 	
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "inquiry_package", joinColumns = { @JoinColumn(name = "inq_pack_id") }, inverseJoinColumns = { @JoinColumn(name = "inquiry_id") })
+	private InquiryPackage inquiryPackage;
+	
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "additional_item", joinColumns = { @JoinColumn(name = "addItem_id") }, inverseJoinColumns = { @JoinColumn(name = "inquiry_id") } )
+	private List<AdditionalItem> addItems;
+	
 	public Inquiry() {
 
 	}
 
-	public Inquiry(int inquiryId, int carId, String vin, int totalPrice,
-			String createdOn, String modifiedOn, String userId, String title) {
+	public Inquiry(int inquiryId, int carId, String vin, int totalPrice, String createdOn, String modifiedOn,
+			String userId, String title, InquiryPackage inquiryPackage, List<AdditionalItem> addItems) {
 		this.inquiryId = inquiryId;
 		this.carId = carId;
 		this.vin = vin;
@@ -60,6 +75,8 @@ public class Inquiry implements Serializable{
 		this.modifiedOn = modifiedOn;
 		this.userId = userId;
 		this.title = title;
+		this.inquiryPackage = inquiryPackage;
+		this.addItems = addItems;
 	}
 
 	public int getInquiryId() {
@@ -126,12 +143,20 @@ public class Inquiry implements Serializable{
 		this.title = title;
 	}
 
-	@Override
-	public String toString() {
-		return "Inquiry [inquiryId=" + inquiryId + ", carId=" + carId
-				+ ", vin=" + vin + ", totalPrice=" + totalPrice
-				+ ", createdOn=" + createdOn + ", modifiedOn=" + modifiedOn
-				+ ", userId=" + userId + ", title=" + title + "]";
+	public InquiryPackage getInquiryPackage() {
+		return inquiryPackage;
+	}
+
+	public void setInquiryPackage(InquiryPackage inquiryPackage) {
+		this.inquiryPackage = inquiryPackage;
+	}
+
+	public List<AdditionalItem> getAddItems() {
+		return addItems;
+	}
+
+	public void setAddItems(List<AdditionalItem> addItems) {
+		this.addItems = addItems;
 	}
 
 }

@@ -21,7 +21,7 @@ import com.bios.portal.utils.Constants;
 
 @RestController
 @RequestMapping("/BIOS/userService")
-@CrossOrigin(origins = "http://yamunafrontend1.apps.eu01.cf.canopy-cloud.com")
+@CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
 
 	private static Logger log = Logger.getLogger(UserController.class);
