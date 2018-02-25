@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
   }
    this._usrSer.loginUser(data).then((res) => {
     if (res.Status) {
-      UtilFunctions.setLocalStorage('userDetail','horst');
+      UtilFunctions.setLocalStorage('userDetail',data.userName);
       this.router.navigate(['/dashboard']);
     } else {
       this.initializeUser();
