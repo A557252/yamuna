@@ -1,9 +1,9 @@
 <div *ngIf="extraServices.length>0">
 <div class="row" >
-    <div class="col-md-2 BIOSpakageHdr BIOSOtherPakHdr">
+    <div class="col-md-7 BIOSpakageHdr BIOSOtherPakHdr">
       <span class="packages"><b>Other Services</b></span>
     </div>
-    <div class="col-md-10 align-right BIOSOtherPakHdr BiosBlueClr" (click)="expand = !expand" style="cursor: pointer;">
+    <div class="col-md-5 align-right BIOSOtherPakHdr BiosBlueClr" (click)="expand = !expand" style="cursor: pointer;">
         <span [class]="!expand? 'glyphicon glyphicon-plus' : 'glyphicon glyphicon-minus'"></span> Add Other Services
     </div>
   </div>

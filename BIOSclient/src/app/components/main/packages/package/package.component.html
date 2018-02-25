@@ -51,10 +51,10 @@
       </span>
     </div>
   </div>
-<div class="row accrodian_row" data-toggle="collapse" [attr.data-target]="'#' + index" *ngFor="let packageObj of packagesArray;let index=index">
+<div class="row accrodian_row" *ngFor="let packageObj of packagesArray;let index=index">
   <div class="col-md-12 paddingL0 BIOSpakHdr">
-      <div class="BIOSrightArrow pull-left"></div>
-    <div class="col-md-8"><h4>{{packageObj.packageName}}</h4></div>
+      <div class="BIOSrightArrow pull-left" data-toggle="collapse" [attr.data-target]="'#' + index"></div>
+    <div class="col-md-9" data-toggle="collapse" [attr.data-target]="'#' + index"><h4>{{packageObj.packageName}}</h4></div>
     <div class="col-md-2 checkbox_td ">
         <label class="containerCB">
         <input type="checkbox" class="checkmark" [(ngModel)]="packageObj.selected" (ngModelChange)="selectPackages(packageObj)">

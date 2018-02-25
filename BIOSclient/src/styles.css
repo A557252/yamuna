@@ -173,10 +173,10 @@ label {margin-bottom: 10px;}
     position: absolute;
     margin: 0 0 0 6px;}
 .BIOSWlogo img { width: 96px; height: 96px;}
-.BIOSWcarModle {background-color: #0099dc; padding-top: 6px;
-    height: 40px;
+.BIOSWcarModle {background-color: #0099dc; padding-top: 12px;
+    height: 60px;
     color: #fff;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
     vertical-align: middle;
     margin-top: 40px;
@@ -201,6 +201,25 @@ label {margin-bottom: 10px;}
     text-align: right;}
 .BIOSftrGoToTop a {color: #000;}
 .BIOSftrTxt {padding-left: 80px; padding-right: 80px;}
+
+h4 {font-size: 24px;}
+.accrodian_row {border-bottom: 0 !important;}
+.checkbox_td {padding-top:11px;}
+.checkmark {width:30px; height:30px; border: 1px solid #DEE1E3; border-radius: 7px;}
+.containerCB input:checked ~ .checkmark {
+    background-color: #0099da;
+    border: none;
+}
+.containerCB .checkmark:after {left: 11px;
+    top: 4px;
+    width: 9px;
+    height: 17px; }
+    table.BIOSpakTableInr td {padding: 25px 5px 25px 20px !important;}
+    .checkbox_td {width: 50px !important;}
+    table.BIOStable td {padding: 20px !important; }
+    table.BIOSpakTableInr td, table.BIOStable td { color: #333; font-size: 14px;}
+    button {box-shadow: none !important;}
+    table.BIOStable th {color:#333;}
 
 @media (min-width: 320px) and (max-width: 767px) {
 	#vw_content, .vw_content {padding-left: 0;}	
