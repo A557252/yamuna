@@ -30,17 +30,21 @@ export class SearchComponent implements OnInit {
     }
     this._inquiryService.vinSearch(vinNumber).subscribe((res) => {
       console.log(res);
-      this.packagesArray = res[0].packages;
-      this.broadcaster.broadcast('updatePackages', this.packagesArray);
-      this.broadcaster.broadcast('updateAmount', 0);
+      if(res!=null && res.length > 0){
+        this.packagesArray = res[0].packages;
+        this.broadcaster.broadcast('updatePackages', this.packagesArray);
+        this.broadcaster.broadcast('updateAmount', 0);
+      }
     }, (resError) => {
       console.log(resError);
     });
 
     this._inquiryService.getExtraServices().subscribe((res) => {
       console.log(res);
-      this.extraServices = res;
-      this.broadcaster.broadcast('extraServices', this.extraServices);
+      if(res !=null && res.length >0){
+        this.extraServices = res;
+        this.broadcaster.broadcast('extraServices', this.extraServices);
+      }
     }, (resError) => {
       console.log(resError);
     });
