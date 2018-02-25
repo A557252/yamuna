@@ -14,3 +14,13 @@
     padding-left: 10px;
     padding-right: 10px;
 }
+.BIOSPackageDetailThead {
+    background-color: #808890;
+    color: #FFFFFF;
+}
+.table-striped > tbody > tr:nth-of-type(even) {
+    background-color: #F3F5F6;
+}
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #FFFFFF;
+}

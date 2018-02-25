@@ -1,0 +1,14 @@
+.BIOSInquiryHdr {
+    padding: 14px;
+    background-color: #808890;
+    color: #FFFFFF;
+}
+.table-striped > tbody > tr:nth-of-type(even) {
+    background-color: #F3F5F6;
+}
+.inquiry_table .col-md-12 {
+    padding: 0 !important;
+}
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #FFFFFF;
+}

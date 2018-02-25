@@ -1,31 +1,28 @@
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <div class="table-responsive table-fixed">
-        <table class="table packages_table">
-            <tbody>
-      <ng-container *ngFor="let inquiryObj of inquiriesArray">
-        <tr>
-          <td colspan="3">
-              <div class="expanded_table">
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                      <table class="table table-bordered">
-                         <tbody>
-                            <tr>
-                              <td>{{inquiryObj.title}}</td>
-                              <td>&euro; {{inquiryObj.totalPrice}}</td>
-                              <td>{{inquiryObj.carId}}</td>
-                            </tr>
-                          </tbody>
-                    </table>
-                </div>
-              </div>
-              </div>
-          </td>
-        </tr>
-</ng-container>
-</tbody>
-</table>
+
+<div class="row BIOSInquiryHdr">
+  <div class="col-md-12">
+    <span>New Inqueries</span>
+  </div>
 </div>
-</div>
+<div class="row inquiry_table">
+  <div class="col-md-12">
+      <div class="table-responsive">          
+        <table class="table table-striped">
+          <tbody>
+              <ng-container  *ngFor="let inquiryObj of inquiriesArray">
+            <tr>
+              <td>1</td>
+              <td>Anna</td>
+              <td>Pitt</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Anna</td>
+              <td>Pitt</td>
+            </tr>
+            </ng-container>
+          </tbody>
+        </table>
+        </div>
+  </div>
 </div>

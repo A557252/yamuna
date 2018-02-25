@@ -1,16 +1,32 @@
-<div>
-<!-- <app-package></app-package> -->
-<app-package [packagesArray]="packagesArray"></app-package>
-<app-other-package [extraServices]="extraServices"></app-other-package>
 <div class="row amount_row" *ngIf="packagesArray.length>0 || extraServices.length>0">
-  <div class="col-md-2 col-xs-3">
-    <button type="button" class="btn btn-default">Save</button>
+  <!-- <app-package></app-package> -->
+  <div class="row">
+    <div class="col-md-1">
+      Name
+    </div>
+    <div class="col-md-7">
+      <input class="form-control" type="text" name="" id="">
+    </div>
+    <div class="col-md-2 text-right">
+      Price
+    </div>
+    <div class="col-md-2 text-right">
+      400
+    </div>
   </div>
-  <div class="col-md-2 col-md-offset-7 col-xs-offset-3 col-xs-4">
-    <span style="float: right;"><b>Total amount</b></span>
-  </div>
-  <div class="col-md-1 col-xs-1">
-    <span class="total_amount">&euro; {{totalAmount}}</span>
+  <app-package [packagesArray]="packagesArray"></app-package>
+  <app-other-package [extraServices]="extraServices"></app-other-package>
+  <div class="row amount_row" *ngIf="packagesArray.length>0 || extraServices.length>0">
+    <div class="col-md-2 col-xs-3">
+      <button type="button" class="btn btn-default">Save</button>
+    </div>
+    <div class="col-md-2 col-md-offset-7 col-xs-offset-3 col-xs-4">
+      <span style="float: right;">
+        <b>Total amount</b>
+      </span>
+    </div>
+    <div class="col-md-1 col-xs-1">
+      <span class="total_amount">&euro; {{totalAmount}}</span>
+    </div>
   </div>
 </div>
-</div>          

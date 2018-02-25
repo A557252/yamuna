@@ -6,7 +6,7 @@
   <div class="col-md-3 col-xs-10 align-center">
       <input type="text" minlength="17" required maxlength="17" size="17" 
       name="vinNumber"  [formControl]="vinNumberValidation" [(ngModel)]="vinNumber"
-      [class]="!vinNumberValidation.valid && searchForm.submitted ? 'errorMsgBox vin_input' : 'vin_input'"/><br/>
+      [class]="!vinNumberValidation.valid && searchForm.submitted ? 'errorMsgBox vin_input form-control' : 'vin_input form-control'"/><br/>
       <span class="vin_input_text">(VIN number should be 17 characters.)</span>
       <div class="clearfix"></div>
       <div *ngIf="searchForm.submitted">

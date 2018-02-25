@@ -1,40 +1,46 @@
-<div class="expanded_table">
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Price</th>
-                <th>Description</th>
-                <th>Spareparts</th>
-                <th>Labour Positions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>&euro; {{packageObj.price}}</td>
-                <td>
-                  {{packageObj.description}}
-                </td>
-                <td>
-                  <div class="row" *ngFor="let sparepart of packageObj.spareParts; let last = last">
-                    <div class="col-md-12">
-                      {{sparepart.spareName}}
-                      <hr *ngIf="!last"/>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div class="row" *ngFor="let labourPosition of packageObj.labourPositions; let last = last">
-                    <div class="col-md-12">
-                      {{labourPosition.lpositionName}}
-                      <hr *ngIf="!last"/>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-      </table>
+<div class="row BIOSInquiryHdr">
+    <div class="col-md-12">
+      <span>New Inqueries</span>
+    </div>
   </div>
-</div>
-</div>
+  <div class="row inquiry_table">
+    <div class="col-md-12">
+        <div class="table-responsive">          
+          <table class="table table-striped">
+              <thead class="BIOSPackageDetailThead">
+                  <tr>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Spareparts</th>
+                    <th>Labour Positions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>&euro; {{packageObj.price}}</td>
+                    <td>
+                      {{packageObj.description}}
+                    </td>
+                    <td>
+                      <div class="row" *ngFor="let sparepart of packageObj.spareParts; let last = last">
+                        <div class="col-md-12">
+                          {{sparepart.spareName}}
+                          <hr *ngIf="!last"/>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="row" *ngFor="let labourPosition of packageObj.labourPositions; let last = last">
+                        <div class="col-md-12">
+                          {{labourPosition.lpositionName}}
+                          <hr *ngIf="!last"/>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+          </table>
+          </div>
+    </div>
+  </div>
+
