@@ -1,0 +1,113 @@
+/* Typography */
+/**
+ * Template
+ *
+ * @font-face {
+ * font-family: 'MyWebFont';
+ * src: url('webfont.eot'); 	// IE9 Compat Modes
+ * src: url('webfont.eot?#iefix') format('embedded-opentype'),	// IE6-IE8
+ *      url('webfont.woff2') format('woff2'),					// Super Modern Browsers
+ *      url('webfont.woff') format('woff'),						// Pretty Modern Browsers
+ *      url('webfont.ttf')  format('truetype'),					// Safari, Android, iOS
+ *      url('webfont.svg#svgFontName') format('svg');			// Legacy iOS
+ * }
+ */
+
+@font-face {
+	font-family: "VWHeadlineOTBlack";
+	src: url( "/assets/webfonts/VWHeadlineOT-Black.eot");
+	src: url( "/assets/webfonts/VWHeadlineOT-Black.eot?#iefix") format('embedded-opentype'),
+	url( "/assets/webfonts/VWHeadlineOT-Black.woff") format("woff"),
+	url( "/assets/webfonts/VWHeadlineOT-Black.svg") format("svg");
+	font-weight: 900;
+	font-style: normal;
+}
+@font-face {
+	font-family: "VWHeadlineOTBook";
+	src: url( "/assets/webfonts/VWHeadlineOT-Book.eot");
+	src: url( "/assets/webfonts/VWHeadlineOT-Book.eot?#iefix") format('embedded-opentype'),
+	url( "/assets/webfonts/VWHeadlineOT-Book.woff") format("woff"),
+	url( "/assets/webfonts/VWHeadlineOT-Book.svg") format("svg");
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: "VWHeadlineOTSemibold";
+	src: url( "/assets/webfonts/VWHeadlineOT-Semibold.eot");
+	src: url( "/assets/webfonts/VWHeadlineOT-Semibold.eot?#iefix") format('embedded-opentype'),
+	url( "/assets/webfonts/VWHeadlineOT-Semibold.woff") format("woff"),
+	url( "/assets/webfonts/VWHeadlineOT-Semibold.svg") format("svg");
+	font-weight: 600;
+	font-style: normal;
+}
+
+
+
+/*************** New Typeface ***************/
+
+/**** VWHeadWeb ****/
+@font-face {
+	font-family: "VWHeadWeb-Bold";
+	src: url( "/assets/webfonts/VWHeadWeb-Bold.eot");
+	src: url( "/assets/webfonts/VWHeadWeb-Bold.eot?#iefix") format('embedded-opentype'),
+	url( "/assets/webfonts/VWHeadWeb-Bold.woff") format("woff"),
+	url( "/assets/webfonts/VWHeadWeb-Bold.ttf") format("truetype"),
+	url( "/assets/webfonts/VWHeadWeb-Bold.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "VWHeadWeb-Regular";
+	src: url( "/assets/webfonts/VWHeadWeb-Regular.eot");
+	src: url( "/assets/webfonts/VWHeadWeb-Regular.eot?#iefix") format('embedded-opentype'),
+	url( "/assets/webfonts/VWHeadWeb-Regular.woff") format("woff"),
+	url( "/assets/webfonts/VWHeadWeb-Regular.ttf") format("truetype"),
+	url( "/assets/webfonts/VWHeadWeb-Regular.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+/**** VWTextWeb ****/
+@font-face {
+	font-family: "VWTextWeb-Regular";
+	src: url( "/assets/webfonts/VWTextWeb-Regular.eot");
+	src: url( "/assets/webfonts/VWTextWeb-Regular.eot?#iefix") format('embedded-opentype'),
+	url( "/assets/webfonts/VWTextWeb-Regular.woff") format("woff"),
+	url( "/assets/webfonts/VWTextWeb-Regular.ttf") format("truetype"),
+	url( "/assets/webfonts/VWTextWeb-Regular.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "VWTextWeb-Bold";
+	src: url( "/assets/webfonts/VWTextWeb-Bold.eot");
+	src: url( "/assets/webfonts/VWTextWeb-Bold.eot?#iefix") format('embedded-opentype'),
+	url( "/assets/webfonts/VWTextWeb-Bold.woff") format("woff"),
+	url( "/assets/webfonts/VWTextWeb-Bold.ttf") format("truetype"),
+	url( "/assets/webfonts/VWTextWeb-Bold.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*new font font-family starts*/
+@font-face {
+	font-family: "VWHeadWeb-Light";
+	src: url("/assets/webfonts/VWHeadWeb-Light.eot");
+	src: url("/assets/webfonts/VWHeadWeb-Light.eot?#iefix") format("embedded-opentype"), 
+	url("/assets/webfonts/VWHeadWeb-Light.woff") format("woff"), 
+	url("/assets/webfonts/VWHeadWeb-Light.ttf") format("truetype"), 
+	url("/assets/webfonts/VWHeadWeb-Light.svg#VWHeadWeb-Light") format("svg");
+	font-weight: normal;
+	font-style: normal
+}
+
+@font-face {
+	font-family: "VWHeadWeb-ExtraBold";
+	src: url("/assets/webfonts/VWHeadWeb-ExtraBold.eot");
+	src: url("/assets/webfonts/VWHeadWeb-ExtraBold.eot?#iefix") format("embedded-opentype"), 
+	url("/assets/webfonts/VWHeadWeb-ExtraBold.woff") format("woff"), 
+	url("/assets/webfonts/VWHeadWeb-ExtraBold.ttf") format("truetype"), 
+	url("/assets/webfonts/VWHeadWeb-ExtraBold.svg#VWHeadWeb-ExtraBold") format("svg");
+	font-weight: normal;
+	font-style: normal
+}
+
