@@ -9,8 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -41,10 +39,10 @@ public class Inquiry implements Serializable{
 	@Column(name="TOTAL_PRICE")
 	private int totalPrice;
 	
-	@Column(name="CREATED_ON",length=12)
+	@Column(name="CREATED_ON",length=30)
 	private String createdOn;
 	
-	@Column(name="MODIFIED_ON",length=12)
+	@Column(name="MODIFIED_ON",length=30)
 	private String modifiedOn;
 	
 	@Column(name="USER_ID",length=3)
@@ -53,12 +51,12 @@ public class Inquiry implements Serializable{
 	@Column(name="TITLE",length=50)
 	private String title;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "inquiry_package", joinColumns = { @JoinColumn(name = "inq_pack_id") }, inverseJoinColumns = { @JoinColumn(name = "inquiry_id") })
-	private InquiryPackage inquiryPackage;
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "INQUIRY_ID")
+	private List<InquiryPackage> inquiryPackage;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "additional_item", joinColumns = { @JoinColumn(name = "addItem_id") }, inverseJoinColumns = { @JoinColumn(name = "inquiry_id") } )
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "INQUIRY_ID")
 	private List<AdditionalItem> addItems;
 	
 	public Inquiry() {
@@ -66,7 +64,7 @@ public class Inquiry implements Serializable{
 	}
 
 	public Inquiry(int inquiryId, int carId, String vin, int totalPrice, String createdOn, String modifiedOn,
-			String userId, String title, InquiryPackage inquiryPackage, List<AdditionalItem> addItems) {
+			String userId, String title,  List<InquiryPackage> inquiryPackage, List<AdditionalItem> addItems) { 
 		this.inquiryId = inquiryId;
 		this.carId = carId;
 		this.vin = vin;
@@ -142,18 +140,19 @@ public class Inquiry implements Serializable{
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	
 
-	public InquiryPackage getInquiryPackage() {
+	/*public  List<InquiryPackage> getInquiryPackage() {
 		return inquiryPackage;
-	}
+	}*/
 
-	public void setInquiryPackage(InquiryPackage inquiryPackage) {
+	public void setInquiryPackage( List<InquiryPackage> inquiryPackage) {
 		this.inquiryPackage = inquiryPackage;
 	}
 
-	public List<AdditionalItem> getAddItems() {
+	/*public List<AdditionalItem> getAddItems() {
 		return addItems;
-	}
+	}*/
 
 	public void setAddItems(List<AdditionalItem> addItems) {
 		this.addItems = addItems;

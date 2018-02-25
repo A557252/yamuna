@@ -5,6 +5,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 /**
@@ -22,8 +24,8 @@ public class AdditionalItem implements Serializable{
 	
 	@Id
 	@GeneratedValue
-	@Column(name="INQUIRY_ID")
-	private int inqId;
+	@Column(name="ADDITEM_ID")
+	private int addItemId;
 	
 	@Column(name="DESCRIPTION",length=50)
 	private String description;
@@ -31,57 +33,52 @@ public class AdditionalItem implements Serializable{
 	@Column(name="PRICE")
 	private int price;
 	
+	@Column(name="INQUIRY_ID")
+	private Inquiry inquiry;
 	
 	public AdditionalItem() {
 
 	}
 
-
-	public AdditionalItem(int inqId, String description, int price) {
-		super();
-		this.inqId = inqId;
+	public AdditionalItem(int addItemId, String description, int price, Inquiry inquiry) {
+		this.addItemId = addItemId;
 		this.description = description;
 		this.price = price;
+		this.inquiry = inquiry;
 	}
 
 
-	public int getInqId() {
-		return inqId;
+
+	public int getAddItemId() {
+		return addItemId;
 	}
 
-
-	public void setInqId(int inqId) {
-		this.inqId = inqId;
+	public void setAddItemId(int addItemId) {
+		this.addItemId = addItemId;
 	}
-
 
 	public String getDescription() {
 		return description;
 	}
 
-
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
 
 	public int getPrice() {
 		return price;
 	}
 
-
 	public void setPrice(int price) {
 		this.price = price;
 	}
 
-
-	@Override
-	public String toString() {
-		return "AdditionalItems [inqId=" + inqId + ", description="
-				+ description + ", price=" + price + "]";
+	public Inquiry getInquiry() {
+		return inquiry;
 	}
 
-
-	
+	public void setInquiry(Inquiry inquiry) {
+		this.inquiry = inquiry;
+	}
 	
 }
