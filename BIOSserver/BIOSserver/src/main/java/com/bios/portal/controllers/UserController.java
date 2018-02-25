@@ -21,7 +21,7 @@ import com.bios.portal.utils.Constants;
 
 @RestController
 @RequestMapping("/BIOS/userService")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://yamunafrontend1.apps.eu01.cf.canopy-cloud.com")
 public class UserController {
 
 	private static Logger log = Logger.getLogger(UserController.class);
@@ -57,20 +57,4 @@ public class UserController {
 	        log.info("User Logged Out Successfully");
 	        return new ResponseEntity < String > (Constants.SUCCESS_STATUS + Constants.LOGOUT_FAIL, HttpStatus.OK);
 	    }
-	    
-	    /*@RequestMapping(value = "/addUser", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	    public @ResponseBody ResponseEntity < ? > insertUser(@RequestBody User user) {
-	        try {
-	            if (usrSer.addUser(user)) {
-	                log.info("User Added Successfully " + user.getLoginName());
-	                return new ResponseEntity < String > (Constants.SUCCESS_STATUS + Constants.INSERTED_SUCCESS, HttpStatus.OK);
-	            } else {
-	                log.error("User Addition Failed" + user.getLoginName());
-	                return new ResponseEntity < String > (Constants.FAILURE_STATUS + Constants.INSERTED_FAILURE, HttpStatus.NOT_FOUND);
-	            }
-	        } catch (Exception e) {
-	            log.error("User Addition Failed" + e.getMessage());
-	            return new ResponseEntity < String > (Constants.FAILURE_STATUS + Constants.INSERTED_FAILURE, HttpStatus.BAD_REQUEST);
-	        }
-	    }*/
 }

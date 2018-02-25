@@ -23,7 +23,7 @@ import com.bios.portal.services.PackageService;
 
 @RestController
 @RequestMapping("/BIOS/packageService")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://yamunafrontend1.apps.eu01.cf.canopy-cloud.com")
 public class PackageController {
 
 	private static Logger log = Logger.getLogger(PackageController.class);

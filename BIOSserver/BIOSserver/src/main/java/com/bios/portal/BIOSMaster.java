@@ -12,9 +12,4 @@ public class BIOSMaster {
 	public static void main(String[] args) {
         SpringApplication.run(BIOSMaster.class, args);
 	}
-	
-	/*@Bean
-	public PasswordEncoder passwordEncoder() {
-	    return new BCryptPasswordEncoder();
-	}*/
 }
