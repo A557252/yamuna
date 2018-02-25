@@ -14,9 +14,11 @@
     background-color: #E0E9F0;
     padding: 13px;
     border-top: 1px solid black;
+    margin-top: 20px;
 }
 .total_amount {
     color: blue;
+    float: right;
 }
 button {
     box-shadow: 3px 3px #888888;
