@@ -1,5 +1,13 @@
-
-<div class="row">
+<div *ngIf="extraServices.length>0">
+<div class="row" >
+    <div class="col-md-2">
+      <span class="packages"><b>Other Services</b></span>
+    </div>
+    <div class="col-md-10 align-right" (click)="expand = !expand" style="cursor: pointer;">
+        <span [class]="!expand? 'glyphicon glyphicon-plus' : 'glyphicon glyphicon-minus'"></span> Add Other Services
+    </div>
+  </div>
+<div class="row" *ngIf="expand">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="table-responsive table-fixed">
             <table class="table packages_table">
@@ -24,4 +32,5 @@
             </table>
         </div>
     </div>
+</div>
 </div>

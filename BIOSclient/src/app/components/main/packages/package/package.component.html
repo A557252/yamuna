@@ -1,3 +1,14 @@
+<div *ngIf="packagesArray.length>0; else noPackage">
+<div class="row">
+  <div class="col-md-12">
+    <hr/>
+  </div>
+</div>  
+<div class="row" >
+<div class="col-md-2">
+<span class="packages"><b>Packages</b></span>
+</div>
+</div>
 <div class="row">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="table-responsive table-fixed">
@@ -22,3 +33,7 @@
     </div>
   </div>
 </div>
+</div>
+<!-- <ng-template #noPackage>
+  <div class="center mce-text-center">No Packages Available</div>
+</ng-template> -->
