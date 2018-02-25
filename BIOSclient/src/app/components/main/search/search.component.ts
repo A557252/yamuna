@@ -4,6 +4,7 @@ import { Package } from '../../share/package.model';
 import { Broadcaster } from '../../../utils/brodcaster';
 import { Constants } from '../../../utils/constants';
 import { FormControl, Validators } from '@angular/forms';
+import { Model } from '../../share/model.model';
 
 @Component({
   selector: 'app-search',
@@ -17,6 +18,8 @@ export class SearchComponent implements OnInit {
   packagesArray: Package[] = [];
   extraServices: Package[] = [];
   inquiryArray: Array<any> = [];
+  model: Model;
+
   vinNumberValidation = new FormControl('', [
     this.validateVin
   ]);
@@ -32,9 +35,11 @@ export class SearchComponent implements OnInit {
       console.log(res);
       if(res!=null && res.length > 0){
         this.packagesArray = res[0].packages;
+        this.model = res[0].model;
         this.broadcaster.broadcast('updatePackages', this.packagesArray);
-        this.broadcaster.broadcast('updateAmount', 0);
+        this.broadcaster.broadcast('modelData', this.model);
       }
+      this.broadcaster.broadcast('updateAmount', 0);
     }, (resError) => {
       console.log(resError);
     });
@@ -77,10 +82,11 @@ export class SearchComponent implements OnInit {
       console.log(resError);
     });
   }
+
   validateVin(input: FormControl) {
     let vinNumber = input.value;
     if(vinNumber) {
-      if(vinNumber.length > 17 || vinNumber.length < 17) {
+      if(vinNumber.length > 16 || vinNumber.length < 16) {
         return { matchLength: true };
       }
       let vinNumberDigit = vinNumber.substring(11,17);
@@ -92,9 +98,9 @@ export class SearchComponent implements OnInit {
       }
       let vinNumberLetters = vinNumber.substring(0,6);
       if(/([^a-z^A-Z])/.test(vinNumberLetters)) {
-        return {invalidVInLetters: true }
+       return {invalidVInLetters: true }
       }
-     // return hasExclamation ? null : { needsExclamation: true };
+    //  return hasExclamation ? null : { needsExclamation: true };
     }
   }
 }
