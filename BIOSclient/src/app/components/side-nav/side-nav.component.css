@@ -1,0 +1,56 @@
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidenav .sideNav_button li{
+    height: 85px;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 3px solid #eeeeee;
+}
+.sidenav .sideNav_button img{
+    width: 70px;
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+#mySidenav {
+    background-color: white;
+    top: 0;
+    z-index: 1000;
+    position: fixed;
+    display: block;
+    min-width: 96px;
+    max-width: 116px;
+    height: 100%;
+    padding: 0;
+    box-shadow: 5px -10px 20px rgba(0,0,0,0.1);
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+
+}
+@media only screen and (max-width: 500px) {
+    #mySidenav {display: none !important;}
+}

@@ -20,11 +20,10 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl('/login');
   }
   isUserLoggedIn() {
-    this.userDetailObj = UtilFunctions.getLocalStorage('userDetail');
-    if (this.userDetailObj) {
-      return true;
-    } else {
-      return false;
-    }
+     this.userDetailObj = UtilFunctions.isUserLoggedIn();
+     if(!this.userDetailObj) {
+       return false;
+     }
+     return true;
   }
 }

@@ -9,4 +9,12 @@ export class UtilFunctions {
     public static clearLocalStorage() {
         return localStorage.clear();
     }
+    public static isUserLoggedIn() {
+        let userDetailObj = this.getLocalStorage('userDetail');
+        if (userDetailObj) {
+          return userDetailObj;
+        } else {
+          return false;
+        }
+    }
 }
