@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Route, Routes} from '@angular/router';
 
@@ -43,8 +43,9 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes),
-    FormsModule
+    RouterModule.forRoot(appRoutes,{useHash:true}),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ InquiryService, Broadcaster, UserService, AuthGuardService ],
   bootstrap: [ AppComponent ]

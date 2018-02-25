@@ -4,11 +4,17 @@
       <span>VIN</span>
   </div>
   <div class="col-md-3 col-xs-10 align-center">
-      <input type="text" class="vin_input" minlength="17" required maxlength="17" size="17" 
-      name="vinNumber" #vinNumberRef="ngModel" [(ngModel)]="vinNumber"/><br/>
+      <input type="text" minlength="17" required maxlength="17" size="17" 
+      name="vinNumber"  [formControl]="vinNumberValidation" [(ngModel)]="vinNumber"
+      [class]="!vinNumberValidation.valid && searchForm.submitted ? 'errorMsgBox vin_input' : 'vin_input'"/><br/>
       <span class="vin_input_text">(VIN number should be 17 characters.)</span>
       <div class="clearfix"></div>
-      <span *ngIf="searchForm.submitted && !vinNumber && (vinNumberRef.errors || vinNumberRef.errors.required || vinNumberRef.errors.inValid)" class="vin_input_text errorMsg">Invalid VIN number</span>
+      <div *ngIf="searchForm.submitted">
+        <span *ngIf="vinNumberValidation.hasError('matchLength')" class="vin_input_text errorMsg">Die VIN muss 17-stellig sein</span>
+        <span *ngIf="vinNumberValidation.hasError('invalidVInDigit')" class="vin_input_text errorMsg">Die letzten sechs Ziffern müssen nummerisch sein</span>
+        <span *ngIf="vinNumberValidation.hasError('containsSpecialCharacter')" class="vin_input_text errorMsg">Die VIN besteht nur aus Buchstaben und Zahlen</span>
+        <span *ngIf="vinNumberValidation.hasError('invalidVInLetters')" class="vin_input_text errorMsg">Invalid 1 to 6 characters</span>
+      </div>
   </div>
   <div class="col-md-2 col-scol-xs-12">
       <button [disabled]="!vinNumber" type="submit" class="btn btn-default search_button">

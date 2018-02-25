@@ -3,6 +3,7 @@ import { InquiryService } from '../../../services/inquiryService';
 import { Package } from '../../share/package.model';
 import { Broadcaster } from '../../../utils/brodcaster';
 import { Constants } from '../../../utils/constants';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
@@ -16,14 +17,17 @@ export class SearchComponent implements OnInit {
   packagesArray: Package[] = [];
   extraServices: Package[] = [];
   inquiryArray: Array<any> = [];
-
+  vinNumberValidation = new FormControl('', [
+    this.validateVin
+  ]);
   constructor(private _inquiryService: InquiryService, private broadcaster: Broadcaster ) { }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   serachByVinNumber(vinNumber) {
+    if(!this.vinNumberValidation.valid) {
+      return false;
+    }
     this._inquiryService.vinSearch(vinNumber).subscribe((res) => {
       console.log(res);
       this.packagesArray = res[0].packages;
@@ -69,5 +73,24 @@ export class SearchComponent implements OnInit {
       console.log(resError);
     });
   }
-
+  validateVin(input: FormControl) {
+    let vinNumber = input.value;
+    if(vinNumber) {
+      if(vinNumber.length > 17 || vinNumber.length < 17) {
+        return { matchLength: true };
+      }
+      let vinNumberDigit = vinNumber.substring(11,17);
+      if(/([a-zA-Z])/.test(vinNumberDigit)) {
+        return { invalidVInDigit: true };
+      }
+      if(/[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(vinNumber)) {
+        return {containsSpecialCharacter: true }
+      }
+      let vinNumberLetters = vinNumber.substring(0,6);
+      if(/([^a-z^A-Z])/.test(vinNumberLetters)) {
+        return {invalidVInLetters: true }
+      }
+     // return hasExclamation ? null : { needsExclamation: true };
+    }
+  }
 }
