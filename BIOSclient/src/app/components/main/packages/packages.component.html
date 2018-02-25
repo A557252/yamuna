@@ -15,17 +15,17 @@
     <div class="col-md-2">
       <span class="packages"><b>Other Services</b></span>
     </div>
-    <!-- <div class="col-md-10 align-right">
-        <a class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>Add Other Packages</a>
-    </div> -->
+    <div class="col-md-10 align-right" (click)="expand = !expand" style="cursor: pointer;">
+        <span [class]="!expand? 'glyphicon glyphicon-plus' : 'glyphicon glyphicon-minus'"></span> Add Other Services
+    </div>
   </div>
-<app-other-package [extraServices]="extraServices"></app-other-package>
+<app-other-package [extraServices]="extraServices" *ngIf="expand"></app-other-package>
 <div class="row amount_row">
   <div class="col-md-2 col-xs-3">
     <button type="button" class="btn btn-default">Save</button>
   </div>
   <div class="col-md-2 col-md-offset-7 col-xs-offset-3 col-xs-4">
-    <span><b>Total amount</b></span>
+    <span style="float: right;"><b>Total amount</b></span>
   </div>
   <div class="col-md-1 col-xs-1">
     <span class="total_amount">&euro; {{totalAmount}}</span>

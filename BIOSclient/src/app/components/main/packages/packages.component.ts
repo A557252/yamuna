@@ -12,7 +12,8 @@ export class PackagesComponent implements OnInit {
   packagesArray: Package[] = [];
   extraServices: Package[] = [];
   totalAmount: any = 0;
-
+  expand: boolean = false;
+  
   constructor(private broadcaster: Broadcaster) { }
 
   ngOnInit() {
