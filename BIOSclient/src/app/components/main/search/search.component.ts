@@ -86,7 +86,7 @@ export class SearchComponent implements OnInit {
   validateVin(input: FormControl) {
     let vinNumber = input.value;
     if(vinNumber) {
-      if(vinNumber.length > 16 || vinNumber.length < 16) {
+      if(vinNumber.length > 17 || vinNumber.length < 17) {
         return { matchLength: true };
       }
       let vinNumberDigit = vinNumber.substring(11,17);
