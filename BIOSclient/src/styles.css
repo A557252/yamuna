@@ -167,6 +167,20 @@ label {margin-bottom: 10px;}
     .btn-default:hover, .btn-default:hover, .btn-default:active, .btn-default:focus, .btn-default[disabled]:focus, .btn-default[disabled]:hover, .btn-default:active:focus {color: #fff;
         background-color: #0068aa;
         border-color: #0068aa;}
+
+.BIOSLoginBtn button[disabled] {color: #BDC3C6; width: 198px; padding: 4px 9px;
+            text-align: center;
+            display: table;
+            height: 42px;
+            font-size: 14px;
+            background-color: #2F3538;
+            opacity: 0.5;
+            border: 1px solid #808890;}
+ .btn-default[disabled]:focus, .btn-default[disabled]:hover, .btn-default[disabled]:active:focus {
+            color: #BDC3C6;
+            opacity: 0.5;
+            background-color: #2F3538;
+            border:1px solid #808890;}
 .has-feedback span {width: 12%;}
 
 .BIOSWLeftPanel {width: 96px;
