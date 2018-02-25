@@ -11,4 +11,7 @@ export class AppComponent {
   isUserLoggedIn() {
     return UtilFunctions.isUserLoggedIn();
   }
+  goToTop() {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
 }

@@ -45,15 +45,23 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-2 BIOSpakageHdr">
       <span class="packages">
         <b>Packages</b>
       </span>
     </div>
   </div>
 <div class="row accrodian_row" data-toggle="collapse" [attr.data-target]="'#' + index" *ngFor="let packageObj of packagesArray;let index=index">
-  <div class="col-md-12">
-    <h4>Simple collapsible</h4>
+  <div class="col-md-12 paddingL0 BIOSpakHdr">
+      <div class="BIOSrightArrow pull-left"></div>
+    <div class="col-md-8"><h4>{{packageObj.packageName}}</h4></div>
+    <div class="col-md-2 checkbox_td ">
+        <label class="containerCB">
+        <input type="checkbox" class="checkmark" [(ngModel)]="packageObj.selected" (ngModelChange)="selectPackages(packageObj)">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div  class="col-md-1 pull-right padding0">&euro; {{packageObj.price}}</div>
   </div>
   <div [attr.id]="index" class="collapse">
       <app-package-details [packageObj]="packageObj"></app-package-details>

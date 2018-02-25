@@ -2,33 +2,31 @@
     height: 500px;
   }
   
-  .ng-valid[required], .ng-valid.required {
+  /* .ng-valid[required], .ng-valid.required {
     border-left: 5px solid green;
   }
-  
-  .ng-invalid:not(form){
+   */
+  /* .ng-invalid:not(form){
     border-left: 5px solid red;
-  }
+  } */
   
   .centerPad{
     padding-left: 30%;
     padding-top: 10%;
   }
   
-  .red {
-    color: red;
-  }
+  .red {color: #C82E2D;}
   
-.BIOSLoginSec { width:340px; margin:15% auto 0 auto;border: 1px solid #cfd7d9;}
+/* .BIOSLoginSec { width:340px; margin:15% auto 0 auto;border: 1px solid #cfd7d9;}
 .BIOSLoginSecHdr {font-size:16px; color:#000000; text-transform:capitalize; padding: 7px 0 10px 22px;}
 .BIOSLoginSecBox { background-color:#fdfbfc; border:1px solid #e1e6e7; width:100%; padding:24px 24px 20px 20px;}
 .BIOSLoginUsrName, .BIOSLoginPsw { padding:0 0 11px 0;}
 .BIOSLoginUsrName span, .BIOSLoginPsw span { width:25%;}
-.BIOSLoginUsrName input, .BIOSLoginPsw input {width:75%; min-height: 20px; padding: 0 5px; font-size: 12px; border-radius: 0;}
+.BIOSLoginUsrName input, .BIOSLoginPsw input {width:75%; min-height: 20px; padding: 0 5px; font-size: 12px; border-radius: 0;} */
 /* .BIOSLoginPsw input { width: 100%}; */
-.input-group-addon.password_eye { cursor: pointer!important;};
+/* .input-group-addon.password_eye { cursor: pointer!important;};
 .BIOSLoginBtn button { background-color:#fdfeff; color:#25353e; padding: 0 5px; font-size: 12px;  -moz-box-shadow:1px 1px 3px 1px #ccc; -webkit-box-shadow:1px 1px 3px 1px #ccc; box-shadow:1px 1px 3px 1px #ccc;}
 .BIOSLoginBtn{ margin-left:25%;}
 .BIOSLoginBtn button { background-color: #0068aa;border-color: #0068aa;color: #fff;}
 .showpwd{float: right;width: 16px !important;margin-top: -27px;margin-right: 5px;}
-.errorMsg {padding-left: 25%;}
+.errorMsg {padding-left: 25%;}  */

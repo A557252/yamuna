@@ -1,16 +1,7 @@
 
-.BIOSWrapper {max-width:100%; margin:0; min-height:600px;padding-left: 107px;}
+.BIOSWrapper {max-width:100%; margin:0; min-height:600px;padding-left: 96px;}
 @media only screen and (max-width: 500px) {
     .BIOSWrapper {
         padding-left: 0px;
     }
 }
-
-
-
-
-
-
-
-
-

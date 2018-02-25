@@ -1,12 +1,207 @@
 /* You can add global styles to this file, and also import other style files */
- .float-left{float:left!important}
+.float-left{float:left!important}
 .float-right{float:right!important}
-.errorMsgBox {border: 1px solid red;}
-.errorMsg {color: red !important;}
+.errorMsgBox {border: 1px solid #C82E2D;}
+.errorMsg {color: #C82E2D !important; padding-top: 6px;font-size: 11px;}
 .align-right{text-align: right;}
 .pull-right{text-align: right;}
 a {cursor: pointer;}
 .align-center {text-align: center;}
-.pull-left {
-    float: left !important;
+
+/*VW CSS*/
+.mainContainer { overflow-x:hidden;}
+html, body {height: 100%; margin: 0; padding: 0; font-family: Helvetica Neue,Helvetica,Arial,sans-serif;}
+html {/*text-shadow: 1px 1px 1px rgba(0,0,0,0.1);*/text-rendering: optimizeLegibility !important;-webkit-font-smoothing: antialiased !important;}
+body {color: #333; font-size: 14px; font-family:Helvetica Neue,Helvetica,Arial,sans-serif;}
+h1, .h1, h2, .h2, h3, .h3 { margin-bottom: 0; margin-top: 0;}
+.vw_m520_global_footer .vw_m520_other_pages_select, .vw_m022_copy_b1, .vw_m211_next_steps_teaser .vw_m205_next_steps_teaser_item .vw_m031_iconlink, .vw_m212_shopping_teaser .vw_m212_shopping_teaser_prio_1_item .vw_m031_iconlink, .vw_m212_shopping_teaser .vw_m212_shopping_teaser_show_options .vw_m031_iconlink, .vw_m104_divtable, rzslider .rz-bubble.rz-limit, rzslider span:nth-child(5), rzslider span:nth-child(6), .vw_m520_global_footer .vw_m520_legal_element, .vw_m520_global_footer .vw_m520_legal_url, .vw_m520_global_footer .vw_m520_copy_text, .vw_m022_copy_b2, .vw_m022_copy_b3, .vw_m031_iconlink, .vw_m104_divtable .td:first-child, .vw_m411_plCopy .vw_m411_copy_b2 p, .m412_mediaSingleHorizontal .vw_m412_copy_b2 ul, .m412_mediaSingleHorizontal .vw_m412_copy_b2 p, .m414_mediaSingleVertical .vw_m414_copy_b2 p, .vw_m511_anchor_bar .vw_m511_nav_list .vw_m511_nav_item, .vw_m531_model_overview_nav .vw_m531_nav_item, .vw_m532_showroom_nav .vw_m511_nav_list .vw_m511_nav_item, .vw_m520_global_footer .vw_m520_disc_text, .vw_m022_copy_b4, .vw_m023_disclaimer, .vw_m502_quick_access .vw_m502_link_label, .vw_m520_global_footer .vw_m520_links_url, .vw_m520_global_footer .vw_m520_breadcrumb_container span, .vw_m520_global_footer .vw_m520_breadcrumb_container li span, .vw_m520_global_footer .vw_m520_breadcrumb_container li a, .vw_powerLayer_caption, .vw_m162_form .trim_selectbox_select li, .m190_compare_data_sheet .m190_trim .vw_m162_form .ui-selectmenu-text, .m190_compare_data_sheet .m190_trim .vw_m162_form .ui-widget, .m410_mediaGallery .vw_m410_powerLayer_captionContainer, .vw_m411_plCopy .vw_m411_bullets ul, .m412_mediaSingleHorizontal .vw_m411_bullets ul, .vw_m690_disclaimer_link, .vw_m690_modal_disclaimer_dialog, .vw_m690_module_disclaimer_container, .m901_standardForm .errorContainer, .m901_responseLightBox p {font-family: "VWHeadlineOTBook";}
+.vw_m502_btn_icon .vw_m502_link_label, .vw_m502_language_label, .vw_no_height .vw_m502_language_label, h1, .h1, .vw_m021_head_1, h2, .h2, .vw_m021_head_2, h3, .h3, .vw_m021_head_3, h4, .h4, .vw_m021_head_4, h5, .h5, .vw_m021_head_5, .m901_responseLightBox h3 {font-family: "VWHeadlineOTSemibold";}
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {border-top: 0;}
+.table-responsive {overflow-x: hidden;}
+.bodyCont {border:1px solid #cfd7d9; padding:10px; min-height:490px;}
+.BIOSWrapper {max-width:100%; margin:0; min-height:600px;}
+.BIOSTopHdrWid {padding:25px 60px 35px 60px; width:100%; background-color:#0099dc;}
+.BIOSTopHdrTxt {font-family: "VWHeadlineOTSemibold"; font-size:2.250em; color:#fff; text-transform:capitalize;}
+.BIOSLoginSec { width:400px; margin:0 auto;}
+/*.BIOSLoginSecBox {border:1px solid #e1e6e7; width:100%; padding:24px 24px 20px 20px;}*/
+.BIOSLoginUsrName, .BIOSLoginPsw { padding:0 0 25px 0;}
+/* .BIOSLoginUsrName span, .BIOSLoginPsw span, .BIOSLoginBtn span { width:25%; margin-top: 6px; font-size:16px;} */
+.BIOSLoginUsrName span, .BIOSLoginPsw span, .BIOSLoginBtn span { width:25%; margin-bottom: 4px; color: #2f3538; font-size: 16px; line-height: 25px; font-weight: bold; /*font-family: VWTextWeb-Regular;*/} /*check font*/
+.BIOSLoginPsw span i {font-size: 24px;padding-top: 8px;}
+.BIOSLoginSecHdr { font-size: 32px;
+    padding: 20px 0 40px 77px;
+    font-weight: bold;}
+.footer {width: 100%; color: #8c98a3; text-align: right; max-width:1000px; margin:0 auto; padding-top:10px;}
+.padding0 { padding:0 !important;}
+.errorMsg {color: #C82E2D;}
+.errorMsgBox {border: 1px solid #C82E2D;}
+.BIOSWrapperInr { padding:0;}
+#vw_content {margin-left: 15px !important;}
+#vw_content, .vw_content {margin: 0 0 0 0 !important; padding-right:0; padding-left:96px;}
+.BIOSTopHdrRLog { text-align:right;}
+.alert.alert-danger {border-radius: 0;}
+.inquiries {display: block !important;}
+.form-control {height: 42px; font-size:14px;color: #2F3538;}
+.align-right { text-align:right;}
+
+table.BIOStable { table-layout:fixed; font-size: 1.1em; border:0; }
+table.BIOStable th {background-color:#808890; overflow-wrap: break-word; padding:12px 5px 12px 10px !important; color:#ffffff;}
+table.BIOStable td {overflow-wrap: break-word;  padding:12px 5px 12px 10px !important; color:#969697;}
+table.BIOStable tr:nth-child(odd) td{background:#f3f5f6; border: 0px;}
+table.BIOStable tr:nth-child(even) td{background:#ffffff; border: 0px;}
+
+table.BIOSpakTable { table-layout:fixed; font-size: 0.9em; border-top: 2px solid #bdc3c6;}
+table.BIOSpakTable th {background-color:#808890; overflow-wrap: break-word; padding:1px 5px; color:#ffffff;}
+table.BIOSpakTable td {overflow-wrap: break-word;  padding:1px 5px; color:#969697;}
+table.BIOSpakTable tr:nth-child(odd) td{background:#ffffff; border: 0px; vertical-align: middle;}
+table.BIOSpakTable tr:nth-child(even) td{background:#ffffff; border: 0px;}
+
+
+table.BIOSpakTableInr {table-layout:fixed; font-size: 1.1em; border:0; }
+table.BIOSpakTableInr th {background-color:#808890; overflow-wrap: break-word; padding:12px 5px 12px 10px !important; border:0 !important;}
+table.BIOSpakTableInr td {overflow-wrap: break-word;  padding:12px 5px 12px 10px !important; color:#969697;}
+table.BIOSpakTableInr tr:nth-child(odd) td{background:#ffffff; border: 0px;}
+table.BIOSpakTableInr tr:nth-child(even) td{background:#f3f5f6; border: 0px;}
+
+.btn.btn-default.search_button.vw_m032_btn_primary.vw_generalLinkTrack {width: 60%;}
+
+.BIOSpakTableInrClr { color:#c2ebff !important;}
+
+.vin_input_text { font-size:16px;}
+.vin_main_text { font-size:16px; padding-top: 10px;}
+/* The containerCB */
+.containerCB {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.containerCB input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+	border: 1px solid #808890;
+}
+
+/* On mouse-over, add a grey background color */
+.containerCB:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.containerCB input:checked ~ .checkmark {
+    background-color: #0099da;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.containerCB input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.containerCB .checkmark:after {
+    left: 7px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.BIOSDropArrow {font-size: 36px; font-weight: bold; margin-right: 15px; color: #0099da; position: relative;top: 7px;}
+.BIOSpakHdr { font-size:24px; color:#000 !important;}
+.BIOSinqSecHdr { width:10%; padding-right:10px;}
+.BIOSinqSecInput { width:50%; padding-right:10px;}
+.BIOSinqSecPrcTag { width:20%; padding-right:10px;}
+.BIOSinqSecPrice {text-align:right;}
+
+.BIOSusr {margin-right: 15px;}
+.BIOSusr, .BIOSlogOut {width: 60px;text-align: center;}
+.BIOSusr a, .BIOSlogOut a { color: #fff; text-decoration: none;}
+.BIOSusr a i, .BIOSlogOut a i { font-size: 24px;}
+.heading h3 { font-size:24px; padding-bottom:10px;}
+label {margin-bottom: 10px;}
+.container-fluid.vw_background.vw_m102.loginBG { background-color:#FFF !important; padding-top:0;}
+
+.ihdcc-root .copy--1 {
+    font-size: 16px;
+    line-height: 25px;
+}
+
+
+/* .ng-invalid[_ngcontent-c3]:not(form) {border-left: 1px solid #ccc !important;} */
+.BIOSLoginBtn button {color: #fff; width: 198px; padding: 4px 9px;
+    text-align: center;
+    display: table;
+    height: 42px;
+    font-size: 14px;
+    background-color: #0099da;
+    border-color: #0099da;}
+    .btn-default:hover, .btn-default:hover, .btn-default:active, .btn-default:focus, .btn-default[disabled]:focus, .btn-default[disabled]:hover, .btn-default:active:focus {color: #fff;
+        background-color: #0068aa;
+        border-color: #0068aa;}
+.has-feedback span {width: 12%;}
+
+.BIOSWLeftPanel {width: 96px;
+    position: absolute;
+    margin: 0 0 0 6px;}
+.BIOSWlogo img { width: 96px; height: 96px;}
+.BIOSWcarModle {background-color: #0099dc; padding-top: 6px;
+    height: 40px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    vertical-align: middle;
+    margin-top: 40px;
+    text-align: center;}
+.BIOSpakageHdr {font-size: 28px; margin-bottom: 35px !important;
+    line-height: 33px;
+    letter-spacing: -0.025em;
+    margin: 0;
+    color: #1d1f20;}
+.BIOSOtherPakHdr { margin-top: 40px;}
+.BiosBlueClr { color: #0099dc;}
+.BiosBlueBgClr { background-color: #0099dc;}
+.paddingL0 { padding-left: 0;}
+.BIOSrightArrow {background:url(./assets/images/icons/accordian_arrow_right.png) no-repeat top left; width: 30px; height: 30px; margin-right: 10px;
+    margin-top: 6px;}
+.BIOSdwnArrow {background:url(./assets/images/icons/accordian_arrow_down.png) no-repeat top left; width: 30px; height: 30px;}
+.checkbox_td {width: 35px !important;}
+
+.BIOSftrWid {padding: 0 0 44px 96px; width: 100%;}
+.BIOSftrGoToTop {margin-bottom: 25px; background-color: #dee1e3;  color: #2f3538; padding-left: 80px; padding-right: 80px; padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: right;}
+.BIOSftrGoToTop a {color: #000;}
+.BIOSftrTxt {padding-left: 80px; padding-right: 80px;}
+
+@media (min-width: 320px) and (max-width: 767px) {
+	#vw_content, .vw_content {padding-left: 0;}	
 }

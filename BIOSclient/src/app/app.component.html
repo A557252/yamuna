@@ -1,7 +1,14 @@
-<div *ngIf="isUserLoggedIn()"> <app-side-nav></app-side-nav></div>
+<div> <app-side-nav></app-side-nav></div>
+<!-- <div class="BIOSWLeftPanel">
+    <div class="BIOSWlogo"><img src="assets/volksWagenLogo.jpg" alt="" srcset=""></div>
+</div> -->
 <div class="yamuna_container BIOSWrapper">
-    <div class="container BIOSWrapperInr">
+    <div class="BIOSWrapperInr">
       <app-header></app-header>
       <router-outlet></router-outlet>
     </div>
   </div>
+  <footer class="BIOSftrWid">
+    <div class="BIOSftrGoToTop"><a (click)="goToTop()" title="" >Go to top</a></div>
+    <div class="BIOSftrTxt">© Volkswagen 2018</div>
+  </footer>

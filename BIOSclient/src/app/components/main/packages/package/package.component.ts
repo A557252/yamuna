@@ -35,4 +35,5 @@ export class PackageComponent implements OnInit {
     // this._inquiryService.amount.emit(this.totalAmount);
     this.brodcaster.broadcast('updateAmount', this.totalAmount);
   }
+
 }
