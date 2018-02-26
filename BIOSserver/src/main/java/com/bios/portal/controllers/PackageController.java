@@ -26,7 +26,7 @@ import com.bios.portal.utils.Constants;
 
 @RestController
 @RequestMapping("/BIOS/packageService")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://yamunafrontendnew.apps.eu01.cf.canopy-cloud.com")
 public class PackageController {
 
 	final Logger log = LoggerFactory.getLogger(PackageController.class);
