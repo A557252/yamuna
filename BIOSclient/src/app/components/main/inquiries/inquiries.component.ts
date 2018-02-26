@@ -15,7 +15,6 @@ export class InquiriesComponent implements OnInit {
   ngOnInit() {
     this.broadcaster.on<string>('updateInquiries')
     .subscribe(message => {
-      console.log('updateInquiries'+message);
       this.inquiriesArray = message;
     });
   }

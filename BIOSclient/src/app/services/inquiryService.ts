@@ -20,7 +20,6 @@ export class InquiryService {
         .catch(this._vinSearchErrorHandler);
     }
     _vinSearchErrorHandler(error: Response) {
-        console.log(error);
         return Observable.throw(error || 'server error');
     }
 

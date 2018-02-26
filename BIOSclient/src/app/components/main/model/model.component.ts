@@ -16,7 +16,6 @@ export class ModelComponent implements OnInit {
     this.broadcaster.on<string>('modelData')
     .subscribe((message: any) => {
       this.model = message;
-      console.log(this.model);
     });
 
   }

@@ -14,9 +14,7 @@
     </div>
   </div>
   <app-package [packagesArray]="packagesArray" [(saveInquiry)]="saveInquiry"></app-package>
-  <!-- <app-other-package [extraServices]="extraServices" [(saveInquiry)]="saveInquiry"></app-other-package> -->
   <app-add-package [(saveInquiry)]="saveInquiry"></app-add-package>
-  
   <div class="row" *ngIf="packagesArray.length>0 || extraServices.length>0">
     <div class="col-md-2 col-xs-3 pull-right BIOSLoginBtn">
       <button type="button" class="btn btn-default" (click)="onSave()">Save</button>
