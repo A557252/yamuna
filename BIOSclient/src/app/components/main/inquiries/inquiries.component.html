@@ -1,13 +1,13 @@
-<div *ngIf="inquiriesArray.length>0">
+<div *ngIf="model != undefined">
     <div class="row">
         <div class="col-md-12">
-          <hr/>
+            <hr/>
         </div>
-      </div>
-    <div class="row" >
-      <div class="col-md-12 BIOSpakageHdr">
-        <span class="packages"><b>Inquiries</b></span>
-      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 BIOSpakageHdr">
+            <span class="packages"><b>Inquiries</b></span>
+        </div>
     </div>
     <app-inquiry [inquiriesArray]="inquiriesArray"></app-inquiry>
-  </div>          
+</div>

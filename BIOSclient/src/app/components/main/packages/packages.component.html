@@ -1,32 +1,33 @@
+ps{{packagesArray.length}}
 <div class="row" *ngIf="packagesArray.length>0 || extraServices.length>0">
-  <!-- <app-package></app-package> -->
-  <div class="row  BIOSpakHdr">
-    <div class="col-md-1">
-      Name
+    <!-- <app-package></app-package> -->
+    <div class="row  BIOSpakHdr">
+        <div class="col-md-1">
+            Name
+        </div>
+        <div class="col-md-7">
+            <input class="form-control" type="text" name="" id="">
+        </div>
+        <div class="col-md-2 text-right">
+            Price
+        </div>
+        <div class="col-md-2 text-right">
+            &euro; {{totalAmount}}
+        </div>
     </div>
-    <div class="col-md-7">
-      <input class="form-control" type="text" name="" id="">
-    </div>
-    <div class="col-md-2 text-right">
-      Price
-    </div>
-    <div class="col-md-2 text-right">
-      &euro; {{totalAmount}}
-    </div>
-  </div>
-  <app-package [packagesArray]="packagesArray"></app-package>
-  <app-other-package [extraServices]="extraServices"></app-other-package>
-  <div class="row" *ngIf="packagesArray.length>0 || extraServices.length>0">
-    <div class="col-md-2 col-xs-3 pull-right BIOSLoginBtn">
-      <button type="button" class="btn btn-default">Save</button>
-    </div>
-    <!-- <div class="col-md-2 col-md-offset-7 col-xs-offset-3 col-xs-4">
+    <app-package [packagesArray]="packagesArray"></app-package>
+    <app-other-package [extraServices]="extraServices"></app-other-package>
+    <div class="row" *ngIf="packagesArray.length>0 || extraServices.length>0">
+        <div class="col-md-2 col-xs-3 pull-right BIOSLoginBtn">
+            <button type="button" class="btn btn-default">Save</button>
+        </div>
+        <!-- <div class="col-md-2 col-md-offset-7 col-xs-offset-3 col-xs-4">
       <span style="float: right;">
         <b>Total amount</b>
       </span>
     </div> -->
-    <!-- <div class="col-md-1 col-xs-1">
+        <!-- <div class="col-md-1 col-xs-1">
       <span class="total_amount">&euro; {{totalAmount}}</span>
     </div> -->
-  </div>
+    </div>
 </div>
