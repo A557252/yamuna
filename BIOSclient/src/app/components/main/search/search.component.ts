@@ -1,10 +1,11 @@
-import { Component, OnInit, EventEmitter } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { InquiryService } from '../../../services/inquiryService';
 import { Package } from '../../share/package.model';
 import { Broadcaster } from '../../../utils/brodcaster';
 import { Constants } from '../../../utils/constants';
 import { FormControl, Validators } from '@angular/forms';
 import { Model } from '../../share/model.model';
+import { SaveInquiry } from '../../share/saveInquiry.mode';
 
 @Component({
   selector: 'app-search',
@@ -13,21 +14,27 @@ import { Model } from '../../share/model.model';
 })
 export class SearchComponent implements OnInit {
 
-  vinNumber;
+@Input() vinNumber: string;
+@Input() carId: number;
+
+@Output() vinNumberChange: EventEmitter<string> = new EventEmitter();
+@Output() carIdChange: EventEmitter<number> = new EventEmitter();
 
   packagesArray: Package[] = [];
   extraServices: Package[] = [];
   inquiryArray: Array<any> = [];
   model: Model;
-
+  saveInquiry: SaveInquiry;
   vinNumberValidation = new FormControl('', [
     this.validateVin
   ]);
   constructor(private _inquiryService: InquiryService, private broadcaster: Broadcaster ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   serachByVinNumber(vinNumber) {
+    this.broadcaster.broadcast('clearSaveInquiry', '');
     if(!this.vinNumberValidation.valid) {
       return false;
     }
@@ -36,10 +43,11 @@ export class SearchComponent implements OnInit {
       if(res!=null && res.length > 0){
         this.packagesArray = res[0].packages;
         this.model = res[0].model;
+        this.carId = res[0].carId;
         this.broadcaster.broadcast('updatePackages', this.packagesArray);
         this.broadcaster.broadcast('modelData', this.model);
+        this.carIdChange.emit(this.carId);
       }
-      this.broadcaster.broadcast('updateAmount', 0);
     }, (resError) => {
       console.log(resError);
     });
@@ -53,11 +61,10 @@ export class SearchComponent implements OnInit {
     }, (resError) => {
       console.log(resError);
     });
+
+    debugger;
     
-    // if service is offline use below data for  //dev
-    // this.packagesArray = JSON.parse(JSON.stringify(Constants.json[0])).packages;
-    // this.broadcaster.broadcast('updatePackages', this.packagesArray);
-    // this.getExtraServices();
+    this.vinNumberChange.emit(this.vinNumber);
   }
 
   getInquiries(vinNumber){

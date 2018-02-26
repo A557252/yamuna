@@ -1,7 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Package } from '../../../share/package.model';
 import { InquiryService } from '../../../../services/inquiryService';
 import { Broadcaster } from '../../../../utils/brodcaster';
+import { SaveInquiry } from '../../../share/saveInquiry.mode';
+import { InquiryPackage } from '../../../share/inquiryPackage.model';
 
 @Component({
   selector: 'app-package',
@@ -9,31 +11,30 @@ import { Broadcaster } from '../../../../utils/brodcaster';
   styleUrls: ['./package.component.css']
 })
 export class PackageComponent implements OnInit {
-   @Input() packagesArray: Package[];
-  selectedPackageArray: Package[] = [];
-  totalAmount = 0;
+  @Input() packagesArray: Package[];
+  @Input() saveInquiry: SaveInquiry;
+  @Output() saveInquiryChnage: EventEmitter<SaveInquiry> = new EventEmitter();
 
   constructor(private _inquiryService: InquiryService, private brodcaster: Broadcaster) {}
 
-  ngOnInit() {
-    this.brodcaster.on<string>('updateAmount')
-    .subscribe((message: any) => {
-        this.totalAmount = message;
-        console.log("this.totalAmount"+this.totalAmount);
-    });
-  }
+  ngOnInit() {}
 
   selectPackages(selectedPackage, isSelectAll) {
-    console.log(this.totalAmount);
+    const inquiryPackage = new InquiryPackage(selectedPackage.packageId, selectedPackage.price);
     if (selectedPackage.selected) {
-      this.selectedPackageArray.push(selectedPackage);
-      this.totalAmount += selectedPackage.price;
+      this.updateSaveInquiry(inquiryPackage, true);
     } else {
-      this.selectedPackageArray.splice(this.selectedPackageArray.indexOf(selectedPackage), 1);
-      this.totalAmount -= selectedPackage.price;
+      this.updateSaveInquiry(inquiryPackage, false);
     }
-    // this._inquiryService.amount.emit(this.totalAmount);
-    this.brodcaster.broadcast('updateAmount', this.totalAmount);
   }
 
+  updateSaveInquiry(inquiryPackage: InquiryPackage, isPush: boolean) {
+    if (isPush) {
+      this.saveInquiry.inquiryPackage.push(inquiryPackage);
+      this.saveInquiry.totalPrice += inquiryPackage.packagePrice;
+    } else {
+      this.saveInquiry.inquiryPackage.splice(this.saveInquiry.inquiryPackage.indexOf(inquiryPackage), 1);
+      this.saveInquiry.totalPrice -= inquiryPackage.packagePrice;
+    }
+  }
 }

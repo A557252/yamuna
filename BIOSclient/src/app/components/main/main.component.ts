@@ -9,11 +9,10 @@ import { Broadcaster } from '../../utils/brodcaster';
 })
 export class MainComponent implements OnInit {
 
+  vinNumber: string;
+  carId: number;
 
   constructor(private _inquiryService: InquiryService, private brodcaster: Broadcaster) { }
 
-  ngOnInit() {
-
-  }
-
+  ngOnInit() {}
 }

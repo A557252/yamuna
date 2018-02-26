@@ -1,8 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Package } from '../../../share/package.model';
 import { InquiryService } from '../../../../services/inquiryService';
 import { Broadcaster } from '../../../../utils/brodcaster';
 import { SparePart } from '../../../share/spare-part.model';
+import { SaveInquiry } from '../../../share/saveInquiry.mode';
+import { AddItem } from '../../../share/addItem.model';
+import { LabourPosition } from '../../../share/labour-position.model';
 
 @Component({
   selector: 'app-other-package',
@@ -12,39 +15,39 @@ import { SparePart } from '../../../share/spare-part.model';
 export class OtherPackageComponent implements OnInit {
 
   @Input() extraServices: Package[];
-  extraServicesArray: Array<any> = [];
-  totalAmount = 0;
-  constructor(private _inquiryService: InquiryService, private brodcaster: Broadcaster) { }
+  @Input() saveInquiry: SaveInquiry;
+  @Output() saveInquiryChnage: EventEmitter<SaveInquiry> = new EventEmitter();
+
+  constructor(private brodcaster: Broadcaster) { }
 
   ngOnInit() {
-    this.brodcaster.on<string>('updateAmount')
-    .subscribe((message: any) => {
-        this.totalAmount = message;
-        console.log("this.totalAmount"+this.totalAmount);
-    });
   }
 
-  selectSpare(selectedService, spareSpart) {
-    if (spareSpart.selected) {
-      this.extraServicesArray.push(selectedService);
-      this.totalAmount += spareSpart.sparePrice;
+  selectSpare(selectedService, sparePart) {
+    const addItem: AddItem = new AddItem(sparePart.spareName, sparePart.sparePrice);
+    if (sparePart.selected) {
+      this.addItemToSaveInquiry(addItem, true);
     } else {
-      this.extraServicesArray.splice(this.extraServicesArray.indexOf(selectedService), 1);
-      this.totalAmount -= spareSpart.sparePrice;
+      this.addItemToSaveInquiry(addItem, false);
     }
-    // this._inquiryService.amount.emit(this.totalAmount);
-    this.brodcaster.broadcast('updateAmount', this.totalAmount);
   }
 
   selectLposition(selectedService, lposition) {
+    const addItem: AddItem = new AddItem(lposition.lpositionName, lposition.lpositionPrice);
     if (lposition.selected) {
-      this.extraServicesArray.push(selectedService);
-      this.totalAmount += lposition.lpositionPrice;
+      this.addItemToSaveInquiry(addItem, true);
     } else {
-      this.extraServicesArray.splice(this.extraServicesArray.indexOf(selectedService), 1);
-      this.totalAmount -= lposition.lpositionPrice;
+      this.addItemToSaveInquiry(addItem, false);
     }
-    // this._inquiryService.amount.emit(this.totalAmount);
-    this.brodcaster.broadcast('updateAmount', this.totalAmount);
+  }
+
+ addItemToSaveInquiry(addItem: AddItem, isPush: boolean) {
+    if (isPush) {
+      this.saveInquiry.addItems.push(addItem);
+      this.saveInquiry.totalPrice += addItem.price;
+    } else {
+      this.saveInquiry.addItems.splice(this.saveInquiry.addItems.indexOf(addItem), 1);
+      this.saveInquiry.totalPrice -= addItem.price;
+    }
   }
 }

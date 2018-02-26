@@ -1,12 +1,12 @@
 <div class="row body_container">
   <div class="col-md-12">
     <div class="container-fluid section">
-      <app-search></app-search>
+      <app-search [(vinNumber)]="vinNumber" [(carId)]="carId"></app-search>
       <app-model></app-model>
       <app-inquiries></app-inquiries>
     </div>
     <div class="container-fluid section vw_background">
-      <app-packages></app-packages>
+      <app-packages [vinNumber]="vinNumber" [carId]="carId"></app-packages>
     </div>
   </div>
 </div>

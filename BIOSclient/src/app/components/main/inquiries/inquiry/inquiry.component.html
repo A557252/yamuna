@@ -9,32 +9,12 @@
       <div class="table-responsive">          
         <table class="table table-striped BIOStable">
           <tbody>
-             <ng-container  *ngFor="let inquiryObj of inquiriesArray">
+             <ng-container  *ngFor="let inquiryObj of inquiriesArray; let index = index">
             <tr>
-              <td>1</td>
-              <td>Anna</td>
-              <td>Pitt</td>
+              <td>{{index + 1}}</td>
+              <td>{{inquiryObj.title}}</td>
+              <td>{{inquiryObj.totalPrice}}</td>
             </tr>
-            <tr>
-              <td>1</td>
-              <td>Anna</td>
-              <td>Pitt</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Anna</td>
-                <td>Pitt</td>
-              </tr>
-              <tr>
-                  <td>1</td>
-                  <td>Anna</td>
-                  <td>Pitt</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Anna</td>
-                    <td>Pitt</td>
-                  </tr>
             </ng-container>
           </tbody>
         </table>
