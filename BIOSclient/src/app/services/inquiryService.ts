@@ -42,7 +42,6 @@ export class InquiryService {
         .catch(this._vinSearchErrorHandler);
     }
     saveInquiry(savedInquiry) {
-        debugger
         return this._http.post(Constants.URL.host_url + Constants.URL.save_inquiry_url,savedInquiry)
         .map((response: Response) => {
             const userResponse = response.json();
