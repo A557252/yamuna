@@ -1,7 +1,8 @@
 package com.bios.portal.controllers;
 
 import java.util.List;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -28,7 +29,7 @@ import com.bios.portal.utils.Constants;
 @CrossOrigin(origins = "http://localhost:4200")
 public class PackageController {
 
-	private static Logger log = Logger.getLogger(PackageController.class);
+	final Logger log = LoggerFactory.getLogger(PackageController.class);
 	
 	@Autowired
 	private PackageService pacSer;
@@ -49,7 +50,7 @@ public class PackageController {
 				return new ResponseEntity<List<Car>>(resultList,HttpStatus.BAD_REQUEST);
 			}
 		} catch (Exception e) {
-			log.error("Packages Delivery Failed");
+			log.error(e.getStackTrace().toString());
 			return new ResponseEntity<List<Car>>(resultList,HttpStatus.NOT_IMPLEMENTED);
 		}
 	}
@@ -67,7 +68,7 @@ public class PackageController {
 				return new ResponseEntity<List<Package>>(resultList,HttpStatus.BAD_REQUEST);
 			}
 		} catch (Exception e) {
-			log.error("Packages Delivery Failed");
+			log.error(e.getStackTrace().toString());
 			return new ResponseEntity<List<Package>>(resultList,HttpStatus.NOT_IMPLEMENTED);
 		}
 	}
@@ -83,7 +84,7 @@ public class PackageController {
 				return new ResponseEntity<String>(Constants.FAILURE_STATUS+Constants.INSERTED_FAILURE,HttpStatus.BAD_REQUEST);
 			}
 		}catch (Exception e) {
-			log.error("Package Add or Update Failed");
+			log.error(e.getStackTrace().toString());
 			return new ResponseEntity<String>(Constants.FAILURE_STATUS+Constants.INSERTED_FAILURE,HttpStatus.NOT_IMPLEMENTED);
 		}
 	}

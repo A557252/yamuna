@@ -29,24 +29,5 @@ public class UserServiceImpl implements UserService{
 	        }
 	        return null;
 	}
-
-	@Transactional
-	@Override
-	public User addUser(User user) throws Exception {
-		return usrRepo.save(user);
-	}
-
-	@Transactional
-	@Override
-	public boolean modifyUser(User user) throws Exception {
-		return usrRepo.saveAndFlush(user) != null ? true : false;
-	}
-
-	@Transactional
-	@Override
-	public List<User> fetchUserList(String vin) throws Exception {
-		return usrRepo.findAll();
-	}
-
 	
 }

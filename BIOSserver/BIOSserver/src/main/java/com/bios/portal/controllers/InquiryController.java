@@ -1,8 +1,8 @@
 package com.bios.portal.controllers;
 
 import java.util.List;
-
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -24,10 +24,11 @@ import com.bios.portal.utils.Constants;
 
 @RestController
 @RequestMapping("/BIOS/inquiryService")
-//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 public class InquiryController {
 
-	private static Logger log = Logger.getLogger(PackageController.class);
+	final Logger log = LoggerFactory.getLogger(InquiryController.class);
+	
 	@Autowired
 	InquiryService inqSer;
 	
@@ -43,7 +44,7 @@ public class InquiryController {
 				return new ResponseEntity<String>(Constants.FAILURE_STATUS+Constants.INSERTED_FAILURE,HttpStatus.BAD_REQUEST);
 			}
 		} catch (Exception e) {
-			log.error("Inquiry adding Failed");
+			log.error(e.getStackTrace().toString());
 			return new ResponseEntity<String>(Constants.FAILURE_STATUS+Constants.INSERTED_FAILURE,HttpStatus.NOT_IMPLEMENTED);
 		}
 	}
@@ -61,7 +62,7 @@ public class InquiryController {
 				return new ResponseEntity<List<Inquiry>>(resultList,HttpStatus.BAD_REQUEST);
 			}
 		} catch (Exception e) {
-			log.error("Inquiry Delivery Failed" + e.getMessage());
+			log.error(e.getStackTrace().toString());
 			return new ResponseEntity<List<Inquiry>>(resultList,HttpStatus.NOT_IMPLEMENTED);
 		}
 	}

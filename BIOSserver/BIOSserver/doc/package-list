@@ -1,0 +1,6 @@
+com.bios.portal
+com.bios.portal.controllers
+com.bios.portal.entities
+com.bios.portal.repositories
+com.bios.portal.services
+com.bios.portal.utils

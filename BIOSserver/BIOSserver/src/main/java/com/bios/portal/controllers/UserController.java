@@ -1,6 +1,7 @@
 package com.bios.portal.controllers;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -21,10 +22,10 @@ import com.bios.portal.utils.Constants;
 
 @RestController
 @RequestMapping("/BIOS/userService")
-//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
 
-	private static Logger log = Logger.getLogger(UserController.class);
+	final Logger log = LoggerFactory.getLogger(UserController.class);
 	
 	@Autowired
 	private UserService usrSer;
@@ -46,7 +47,7 @@ public class UserController {
 	                return new ResponseEntity < User > (resUser, HttpStatus.NOT_FOUND);
 	            }
 	        } catch (Exception e) {
-	            log.error("User Log In Failed" + e.getMessage());
+	            log.error(e.getStackTrace().toString());
 	            return new ResponseEntity < User > (resUser, HttpStatus.BAD_REQUEST);
 	        }
 	    }
