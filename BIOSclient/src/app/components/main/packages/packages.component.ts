@@ -35,7 +35,6 @@ export class PackagesComponent implements OnInit {
     this.broadcaster.on<string>('extraServices')
     .subscribe((message:any) => {
         this.extraServices = message;
-        console.log('extraServices'+ this.extraServices);
     });
     this.broadcaster.on<string>('clearSaveInquiry')
     .subscribe(() => {
@@ -54,15 +53,12 @@ export class PackagesComponent implements OnInit {
     this.saveInquiry.createdOn = new Date();
     this.saveInquiry.modifiedOn = new Date();
     this.saveInquiry.userId = user.userId;
-    console.log(JSON.stringify(this.saveInquiry));
     this._inquiryService.saveInquiry(this.saveInquiry).subscribe((res) => {
-      console.log(res);
       this.initializeSaveInquiry();
       this.broadcaster.broadcast('updateInquiries', []);
       this.broadcaster.broadcast('updatePackages',[]);
         this.broadcaster.broadcast('modelData', null);
     }, (resError) => {
-      console.log(resError);
     });
   }
 }

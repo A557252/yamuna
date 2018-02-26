@@ -1,29 +1,12 @@
-.header_title {
-    font-size: 20px;
-}
-.logo {
-    width: 60px;
-    height: 60px;
-    margin-top: -28px;
-    margin-left: 20px;
-}
+.header_title {font-size: 20px;}
+.logo {width: 60px;height: 60px;margin-top: -28px;margin-left: 20px;}
 
-.header input {
-    width: 251px;
-}
+.header input {width: 251px;}
 
-.inquiries {
-    color: blue;
-}
-.userDetail {
-    font-size: 22px;
-}
-.userDetail:hover {
-    text-decoration: underline;
-}
-.userDetail .fa.fa-user {
-    padding-right: 5px;
-}
+.inquiries {color: blue;}
+.userDetail {font-size: 22px;}
+.userDetail:hover {text-decoration: underline;}
+.userDetail .fa.fa-user {padding-right: 5px;}
 
 @media only screen and (max-width: 500px) {
     .userDetail {

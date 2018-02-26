@@ -23,7 +23,6 @@ export class UserService {
       }
 
       private handleError(error: any): Promise<any> {
-        console.error('Error', error);
         return Promise.reject(error.message || error);
       }
 }

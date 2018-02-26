@@ -1,17 +1,13 @@
-  <!--login section start here-->
-  <div class="BIOSLoginSecHdr">Login</div>
-  
+<div class="BIOSLoginSecHdr">Login</div>
   <div class="BIOSLoginSec">
     <div class="BIOSLoginSecBox">
         <form id="loginForm" #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
             <div class="alert alert-danger" *ngIf="!loginFormObj.userName && !loginFormObj.userPassword && errorObj && errorObj.hasError">
                 {{errorObj.errorMsg}}
             </div>
-            <!-- <div  class="errorMsg"></div> -->
             <div class="BIOSLoginUsrName"><span class="">Username</span><input #userName="ngModel" 
                 [class]="loginForm.submitted && userName.errors && userName.errors.required ? 'errorMsgBox form-control':'form-control'" 
                 [(ngModel)]="loginFormObj.userName" required name="userName" id="userName" aria-describedby="" type="Username" placeholder="Username">
-                <!--error massage text place here-->
                 <div class="errorMsg" *ngIf="loginForm.submitted && userName.errors && userName.errors.required" class="errorMsg">This field is required</div>
                 <div class="clearfix"></div>
             </div>
@@ -20,9 +16,7 @@
                   <input type="text" class="form-control"  maxlength="42"
                   #loginPassword="ngModel" [class]="loginForm.submitted && loginPassword.errors && loginPassword.errors.required ? 'errorMsgBox form-control':'form-control'" 
                   [(ngModel)]="loginFormObj.userPassword" required name="userPassword" id="userPassword" aria-describedby="" type="Password" placeholder="Password">
-                  <!-- <span class="password_eye showpwd form-control-feedback" (click)="showPassword = !showPassword"><i [class]="!showPassword ? 'fa fa-eye':'fa fa-eye-slash'"></i></span> -->
                 </div>
-                  <!--error massage text place here-->
                   <div class="errorMsg" *ngIf="loginForm.submitted && loginPassword.errors && loginPassword.errors.required" class="errorMsg">This field is required</div>
                   <div class="clearfix"></div>
             </div>
@@ -33,4 +27,3 @@
           </form>
     </div>
   </div>
-  <!--login section end here--> 

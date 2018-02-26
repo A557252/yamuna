@@ -1,31 +1,8 @@
-.body_container {
-    /* margin-top: 80px;
-    /* border: 1px solid black; */
-   /* border-style: inset; */
-    border-width: 2px;
-    height: auto;
-    padding: 55px;
-}
-
-.rupee_badge {
-    margin-right: 10px;
-    background-color: #2274AC;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.vw_background {
-    background-color: #f3f5f6;
-    padding-left: 60px;
-    padding-right: 60px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-
-
+.body_container {border-width: 2px;height: auto;padding: 55px;}
+.rupee_badge {margin-right: 10px;background-color: #2274AC;padding-left: 10px;padding-right: 10px;}
+.vw_background {background-color: #f3f5f6;padding-left: 60px;padding-right: 60px;padding-top: 40px;padding-bottom: 40px;}
 @media only screen and (max-width: 500px) {
     .body_container {
         padding: 15px;
     }
-
 }

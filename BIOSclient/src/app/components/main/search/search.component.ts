@@ -38,7 +38,6 @@ export class SearchComponent implements OnInit {
       return false;
     }
     this._inquiryService.vinSearch(vinNumber).subscribe((res) => {
-      console.log(res);
       if(res!=null && res.length > 0){
         this.packagesArray = res[0].packages;
         this.model = res[0].model;
@@ -48,17 +47,14 @@ export class SearchComponent implements OnInit {
         this.carIdChange.emit(this.carId);
       }
     }, (resError) => {
-      console.log(resError);
     });
 
     this._inquiryService.getExtraServices().subscribe((res) => {
-      console.log(res);
       if(res !=null && res.length >0){
         this.extraServices = res;
         this.broadcaster.broadcast('extraServices', this.extraServices);
       }
     }, (resError) => {
-      console.log(resError);
     });
 
     this.getInquiries(vinNumber);
@@ -67,21 +63,17 @@ export class SearchComponent implements OnInit {
 
   getInquiries(vinNumber){
     this._inquiryService.vinInquiries(vinNumber).subscribe((res) => {
-      console.log(res);
       this.inquiryArray = res;
       this.broadcaster.broadcast('updateInquiries', this.inquiryArray);
   }, (resError) => {
-      console.log(resError);
     });
   }
 
   getExtraServices(){
     this._inquiryService.getExtraServices().subscribe((res) => {
-      console.log(res);
       this.extraServices = res;
       this.broadcaster.broadcast('extraServices', this.extraServices);
     }, (resError) => {
-      console.log(resError);
     });
   }
 
@@ -102,7 +94,6 @@ export class SearchComponent implements OnInit {
       if(/([^a-z^A-Z])/.test(vinNumberLetters)) {
        return {invalidVInLetters: true }
       }
-    //  return hasExclamation ? null : { needsExclamation: true };
     }
   }
 }

@@ -1,25 +1,6 @@
-.packages {
-    font-size: 17px;
-}
-
-
-.expanded_table th {
-    background-color: #CFD7DD;
-}
-.expanded_table .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
-    border: 1px solid black;
-}
-
-.amount_row {
-    background-color: #E0E9F0;
-    padding: 13px;
-    border-top: 1px solid black;
-    margin-top: 20px;
-}
-.total_amount {
-    color: blue;
-    float: right;
-}
-button {
-    box-shadow: 3px 3px #888888;
-}
+.packages {font-size: 17px;}
+.expanded_table th {background-color: #CFD7DD;}
+.expanded_table .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {border: 1px solid black;}
+.amount_row {background-color: #E0E9F0;padding: 13px;border-top: 1px solid black;margin-top: 20px;}
+.total_amount {color: blue;float: right;}
+button {box-shadow: 3px 3px #888888;}

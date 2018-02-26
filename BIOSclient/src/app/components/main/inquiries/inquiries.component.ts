@@ -17,13 +17,11 @@ export class InquiriesComponent implements OnInit {
   ngOnInit() {
     this.broadcaster.on<string>('updateInquiries')
     .subscribe(message => {
-      console.log('updateInquiries'+message);
       this.inquiriesArray = message;
     });
     this.broadcaster.on<string>('modelData')
     .subscribe((message: any) => {
       this.model = message;
-      console.log(this.model);
     });
   }
 

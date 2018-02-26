@@ -25,5 +25,4 @@ export class SaveInquiry {
             this.inquiryPackage = inquiryPackage;
             this.addItems = addItems;
     }
-    // constructor() {}
 }
