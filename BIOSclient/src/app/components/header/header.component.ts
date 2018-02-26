@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    //this.userDetailObj = UtilFunctions.getLocalStorage('userDetail');
+    this.userDetailObj = JSON.parse(UtilFunctions.getLocalStorage('userDetail'));
   }
   logout() {
     UtilFunctions.clearLocalStorage();

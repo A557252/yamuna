@@ -44,9 +44,9 @@ export class LoginComponent implements OnInit {
   if (!data.userName || !data.userPassword) {
     return false;
   }
-   this._usrSer.loginUser(data).then((res) => {
-    if (res.Status) {
-      UtilFunctions.setLocalStorage('userDetail',data.userName);
+   this._usrSer.loginUser(data).then((res: User) => {
+    if (res.userId != null) {
+      UtilFunctions.setLocalStorage('userDetail', JSON.stringify(res));
       this.router.navigate(['/dashboard']);
     } else {
       this.initializeUser();

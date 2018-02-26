@@ -12,6 +12,6 @@ import com.bios.portal.entities.User;
 
 public interface UserRepository extends JpaRepository<User,Integer>{
 
-	public List<User> findByLoginName(String loginName);
+	public List<User> findByUserName(String loginName);
 	
 }

@@ -10,7 +10,7 @@ export class UtilFunctions {
         return localStorage.clear();
     }
     public static isUserLoggedIn() {
-        let userDetailObj = this.getLocalStorage('userDetail');
+        let userDetailObj = JSON.parse(this.getLocalStorage('userDetail'));
         if (userDetailObj) {
           return userDetailObj;
         } else {

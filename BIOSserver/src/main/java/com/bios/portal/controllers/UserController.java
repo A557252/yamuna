@@ -37,7 +37,7 @@ public class UserController {
 		 try {
 	        	User usr = usrSer.findUser(user);
 	            if (usr !=null) {
-	                log.info("User Logged In Successfully " + user.getLoginName());
+	                log.info("User Logged In Successfully " + user.getUserName());
 	                resUser.setUserId(usr.getUserId());
 	                resUser.setUserName(usr.getUserName());
 	                resUser.setUserRole(usr.getUserRole());
