@@ -33,7 +33,8 @@ public class AdditionalItem implements Serializable{
 	@Column(name="PRICE")
 	private int price;
 	
-	@Column(name="INQUIRY_ID")
+	@ManyToOne
+	@JoinColumn(name="inquiry_id")
 	private Inquiry inquiry;
 	
 	public AdditionalItem() {
@@ -73,9 +74,9 @@ public class AdditionalItem implements Serializable{
 		this.price = price;
 	}
 
-	public Inquiry getInquiry() {
+	/*public Inquiry getInquiry() {
 		return inquiry;
-	}
+	}*/
 
 	public void setInquiry(Inquiry inquiry) {
 		this.inquiry = inquiry;

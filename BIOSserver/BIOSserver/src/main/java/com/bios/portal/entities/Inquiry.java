@@ -142,17 +142,17 @@ public class Inquiry implements Serializable{
 	}
 	
 
-	/*public  List<InquiryPackage> getInquiryPackage() {
+	public  List<InquiryPackage> getInquiryPackage() {
 		return inquiryPackage;
-	}*/
+	}
 
 	public void setInquiryPackage( List<InquiryPackage> inquiryPackage) {
 		this.inquiryPackage = inquiryPackage;
 	}
 
-	/*public List<AdditionalItem> getAddItems() {
+	public List<AdditionalItem> getAddItems() {
 		return addItems;
-	}*/
+	}
 
 	public void setAddItems(List<AdditionalItem> addItems) {
 		this.addItems = addItems;
