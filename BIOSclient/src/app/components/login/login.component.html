@@ -10,7 +10,7 @@
             <!-- <div  class="errorMsg"></div> -->
             <div class="BIOSLoginUsrName"><span class="">Username</span><input #userName="ngModel" 
                 [class]="loginForm.submitted && userName.errors && userName.errors.required ? 'errorMsgBox form-control':'form-control'" 
-                [(ngModel)]="loginFormObj.userName" required name="userName" id="userName" aria-describedby="" type="Username" placeholder="Username">
+                [(ngModel)]="loginFormObj.loginName" required name="loginName" id="loginName" aria-describedby="" type="Username" placeholder="Username">
                 <!--error massage text place here-->
                 <div class="errorMsg" *ngIf="loginForm.submitted && userName.errors && userName.errors.required" class="errorMsg">This field is required</div>
                 <div class="clearfix"></div>

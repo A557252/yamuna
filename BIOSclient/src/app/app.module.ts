@@ -21,6 +21,7 @@ import { InquiryComponent } from './components/main/inquiries/inquiry/inquiry.co
 import { AuthGuardService } from './utils/authGuardService';
 import { ModelComponent } from './components/main/model/model.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { AddPackageComponent } from './components/main/packages/add-package/add-package.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
     InquiriesComponent,
     InquiryComponent,
     ModelComponent,
-    SideNavComponent
+    SideNavComponent,
+    AddPackageComponent
   ],
   imports: [
     BrowserModule,

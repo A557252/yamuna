@@ -1,0 +1,37 @@
+<div>
+    <div class="row" >
+        <div class="col-md-4">
+            <input placeholder="Title" class="form-control" type="text" name="" id="" 
+            [(ngModel)]="addPackageObj.description">
+        </div>
+        <div class="col-md-4">
+            <input placeholder="Price" class="form-control" type="number" name="" id="" 
+            [(ngModel)]="addPackageObj.price">
+        </div>
+        <div class="col-md-4 align-left">
+            <button type="submit" class="btn btn-primary" (click)="addPackages(true)">
+                <i class="fa fa-add"></i> Add
+            </button>
+        </div>
+      </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="table-responsive table-fixed">
+                <table class="table packages_table BIOSpakTableInr BIOStable">
+                    <tbody>
+                      <ng-container *ngIf="saveInquiry.addItems.length > 0">
+                          <tr *ngFor="let item of saveInquiry.addItems">
+                              <td>{{item.description}}</td>
+                              <td class="align_right">&euro; {{item.price}}</td>
+                              <td class="align_right"><button type="submit" class="btn btn-primary" 
+                                (click)="addPackages(false,item)">
+                                  <i class="fa fa-add"></i> Delete
+                              </button></td>
+                          </tr>
+                      </ng-container>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
