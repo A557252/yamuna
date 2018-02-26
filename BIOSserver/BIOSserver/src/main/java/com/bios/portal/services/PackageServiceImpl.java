@@ -23,4 +23,10 @@ public class PackageServiceImpl implements PackageService{
 	public List<Package> getPackages() throws Exception {
 		return  pacrepo.findAll();
 	}
+	
+	@Transactional
+	@Override 
+	public boolean setPackages(List<Package> packs) throws Exception {
+		return pacrepo.save(packs) != null ? true : false; 
+	}
 }

@@ -10,4 +10,5 @@ import com.bios.portal.entities.Package;
 
 public interface PackageService {
 	List< Package > getPackages() throws Exception;
+	boolean setPackages(List<Package> packs) throws Exception;
 }
