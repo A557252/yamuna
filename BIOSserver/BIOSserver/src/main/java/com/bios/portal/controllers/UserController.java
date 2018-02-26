@@ -21,7 +21,7 @@ import com.bios.portal.utils.Constants;
 
 @RestController
 @RequestMapping("/BIOS/userService")
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
 
 	private static Logger log = Logger.getLogger(UserController.class);
@@ -29,19 +29,25 @@ public class UserController {
 	@Autowired
 	private UserService usrSer;
 		
-	 @RequestMapping(value = "/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	    public @ResponseBody ResponseEntity < ? > userLogin(@RequestBody User user) {
-	        try {
-	            if (usrSer.findUser(user)) {
+	@SuppressWarnings("null")
+	@RequestMapping(value = "/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	    public @ResponseBody ResponseEntity < User > userLogin(@RequestBody User user) {
+		 User resUser = new User(); 
+		 try {
+	        	User usr = usrSer.findUser(user);
+	            if (usr !=null) {
 	                log.info("User Logged In Successfully " + user.getLoginName());
-	                return new ResponseEntity < String > (Constants.SUCCESS_STATUS + Constants.LOGIN_SUCCESS, HttpStatus.OK);
+	                resUser.setUserId(usr.getUserId());
+	                resUser.setUserName(usr.getUserName());
+	                resUser.setUserRole(usr.getUserRole());
+	                return new ResponseEntity < User > (resUser, HttpStatus.OK);
 	            } else {
 	                log.error("User Log In Failed" + user.getLoginName());
-	                return new ResponseEntity < String > (Constants.FAILURE_STATUS + Constants.LOGIN_FAILURE_NO_USER, HttpStatus.NOT_FOUND);
+	                return new ResponseEntity < User > (resUser, HttpStatus.NOT_FOUND);
 	            }
 	        } catch (Exception e) {
 	            log.error("User Log In Failed" + e.getMessage());
-	            return new ResponseEntity < String > (Constants.FAILURE_STATUS + Constants.LOGIN_FAILURE_NO_USER, HttpStatus.BAD_REQUEST);
+	            return new ResponseEntity < User > (resUser, HttpStatus.BAD_REQUEST);
 	        }
 	    }
 

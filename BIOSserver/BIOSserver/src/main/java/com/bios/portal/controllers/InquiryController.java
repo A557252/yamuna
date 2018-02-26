@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.bios.portal.entities.Car;
 import com.bios.portal.entities.Inquiry;
 import com.bios.portal.services.InquiryService;
 import com.bios.portal.utils.Constants;

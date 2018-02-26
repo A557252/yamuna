@@ -8,8 +8,8 @@ import com.bios.portal.entities.User;
  */
 
 public interface UserService {
-	boolean findUser(User user) throws Exception;
-	boolean addUser(User user) throws Exception;
+	User findUser(User user) throws Exception;
+	User addUser(User user) throws Exception;
 	boolean modifyUser(User user) throws Exception;
 	List< User > fetchUserList(String uid) throws Exception;
 

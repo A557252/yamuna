@@ -20,20 +20,20 @@ public class UserServiceImpl implements UserService{
 	
 	@Transactional
 	@Override
-	public boolean findUser(User user) throws Exception {
-		 List < User > resUser = usrRepo.findByLoginName(user.getUserName());
+	public User findUser(User user) throws Exception {
+		 List < User > resUser = usrRepo.findByLoginName(user.getLoginName());
 	        if (resUser != null) {
 	            for (User usr: resUser) {
-	                return usr.getUserPassword().equals(user.getUserPassword()) ? true : false;
+	                return usr.getUserPassword().equals(user.getUserPassword()) ? usr : null;
 	            }
 	        }
-	        return false;
+	        return null;
 	}
 
 	@Transactional
 	@Override
-	public boolean addUser(User user) throws Exception {
-		return usrRepo.save(user) != null ? true : false;
+	public User addUser(User user) throws Exception {
+		return usrRepo.save(user);
 	}
 
 	@Transactional
