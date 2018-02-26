@@ -158,4 +158,11 @@ public class Inquiry implements Serializable{
 		this.addItems = addItems;
 	}
 
+	@Override
+	public String toString() {
+		return "Inquiry [inquiryId=" + inquiryId + ", carId=" + carId + ", vin=" + vin + ", totalPrice=" + totalPrice
+				+ ", createdOn=" + createdOn + ", modifiedOn=" + modifiedOn + ", userId=" + userId + ", title=" + title
+				+ ", inquiryPackage=" + inquiryPackage + ", addItems=" + addItems + "]";
+	}
+
 }

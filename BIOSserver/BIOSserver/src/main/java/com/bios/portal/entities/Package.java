@@ -131,4 +131,12 @@ public class Package implements Serializable{
 	public void setIsActive(String isActive) {
 		this.isActive = isActive;
 	}
+
+	@Override
+	public String toString() {
+		return "Package [packageId=" + packageId + ", packageName=" + packageName + ", price=" + price
+				+ ", description=" + description + ", isActive=" + isActive + ", spareParts=" + spareParts
+				+ ", labourPositions=" + labourPositions + ", car=" + car + "]";
+	}
+	
 }

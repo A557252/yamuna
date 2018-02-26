@@ -56,5 +56,10 @@ public class Model implements Serializable{
 	public void setModelName(String modelName) {
 		this.modelName = modelName;
 	}
+
+	@Override
+	public String toString() {
+		return "Model [modelId=" + modelId + ", modelName=" + modelName + "]";
+	}
 	
 }

@@ -69,5 +69,15 @@ public class InquiryPackage implements Serializable{
 	public void setPackagePrice(int packagePrice) {
 		this.packagePrice = packagePrice;
 	}
+
+	public void setInquiry(Inquiry inquiry) {
+		this.inquiry = inquiry;
+	}
+
+	@Override
+	public String toString() {
+		return "InquiryPackage [inqPackId=" + inqPackId + ", inquiry=" + inquiry + ", packageId=" + packageId
+				+ ", packagePrice=" + packagePrice + "]";
+	}
 	
 }

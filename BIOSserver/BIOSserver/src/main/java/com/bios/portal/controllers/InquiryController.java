@@ -33,8 +33,8 @@ public class InquiryController {
 	@Autowired
 	InquiryService inqSer;
 	
-	@RequestMapping(value = "/addInquiry", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody ResponseEntity<?> insertInquiry(@RequestBody Inquiry inquiry)
+	@RequestMapping(value = "/inquiry", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody ResponseEntity<String> insertInquiry(@RequestBody Inquiry inquiry)
 	{
 		try {
 			if(inqSer.addInquiry(inquiry)){
@@ -50,8 +50,8 @@ public class InquiryController {
 		}
 	}
 	
-	@RequestMapping(value = "/getVinInquiries", method = RequestMethod.GET, produces =MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody ResponseEntity<?> getInquiries(@RequestParam ("vin") String vin )
+	@RequestMapping(value = "/inquiries", method = RequestMethod.GET, produces =MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody ResponseEntity<List<Inquiry>> getInquiries(@RequestParam ("vin") String vin )
 	{
 		List<Inquiry> resultList = null;
 		try {

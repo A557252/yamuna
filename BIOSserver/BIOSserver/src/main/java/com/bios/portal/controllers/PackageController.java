@@ -34,8 +34,8 @@ public class PackageController {
 	@Autowired
 	private CarService carSer;
 	
-	@RequestMapping(value = "/getVinPackages", method = RequestMethod.GET, produces =MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody ResponseEntity<?> getPackages(@RequestParam ("vin") String vin )
+	@RequestMapping(value = "/packages", method = RequestMethod.GET, produces =MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody ResponseEntity<List<Car>> getPackages(@RequestParam ("vin") String vin )
 	{
 		List<Car> resultList = null;
 		try {
@@ -52,8 +52,8 @@ public class PackageController {
 		}
 	}
 	
-	@RequestMapping(value = "/getAllServices", method = RequestMethod.GET, produces =MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody ResponseEntity<?> getAdditionalServices()
+	@RequestMapping(value = "/services", method = RequestMethod.GET, produces =MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody ResponseEntity<List<Package>> getAdditionalServices()
 	{
 		List<Package> resultList = null;
 		try {

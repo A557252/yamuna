@@ -48,8 +48,6 @@ public class AdditionalItem implements Serializable{
 		this.inquiry = inquiry;
 	}
 
-
-
 	public int getAddItemId() {
 		return addItemId;
 	}
@@ -74,12 +72,13 @@ public class AdditionalItem implements Serializable{
 		this.price = price;
 	}
 
-	/*public Inquiry getInquiry() {
-		return inquiry;
-	}*/
-
 	public void setInquiry(Inquiry inquiry) {
 		this.inquiry = inquiry;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "AdditionalItem [addItemId=" + addItemId + ", description=" + description + ", price=" + price
+				+ ", inquiry=" + inquiry + "]";
+	}
 }

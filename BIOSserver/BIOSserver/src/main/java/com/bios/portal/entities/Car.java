@@ -83,5 +83,10 @@ public class Car implements Serializable{
 	public void setPackages(List<Package> packages) {
 		this.packages = packages;
 	}
+
+	@Override
+	public String toString() {
+		return "Car [carId=" + carId + ", vin=" + vin + ", model=" + model + ", packages=" + packages + "]";
+	}
 	
 }

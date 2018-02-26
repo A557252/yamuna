@@ -28,14 +28,7 @@ public class UserController {
 	
 	@Autowired
 	private UserService usrSer;
-	
-	@RequestMapping(value = "/healthCheck", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody ResponseEntity< ? > checkHealth()
-	{
-		log.error("Service running fine!!!");
-		return new ResponseEntity< String >("{\"success\":\"Service Available\"}",HttpStatus.OK);
-	}
-	
+		
 	 @RequestMapping(value = "/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	    public @ResponseBody ResponseEntity < ? > userLogin(@RequestBody User user) {
 	        try {
