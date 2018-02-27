@@ -8,8 +8,8 @@ public interface Constants {
 	public static String SUCCESS_STATUS = "{\"Status\" : true ,";
     public static String FAILURE_STATUS = "{\"Status\" : false ,";
     public static String LOGIN_SUCCESS = "\"Message\" : \"Login Successful\"}";
-    public static String LOGIN_FAILURE = "\"Message\" : \"Login Failed. Wrong Credentials\"}";
-    public static String LOGIN_FAILURE_NO_USER = "\"Message\" : \"Login Failed. No such User present\"}";
+    public static String LOGIN_FAILURE = "\"Message\" : \"Login Failed.\"}";
+    public static String LOGIN_FAILURE_NO_USER = "\"Message\" : \"Login Failed.\"}";
     public static String LOGOUT_SUCCESS = "\"Message\" : \"Logout Successful\"}";
     public static String LOGOUT_FAIL = "\"Message\" : \"Logout Failed\"}";
     public static String INSERTED_SUCCESS = "\"Message\" : \"Added Successfully\"}";

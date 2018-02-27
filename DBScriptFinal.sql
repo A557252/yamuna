@@ -1,8 +1,10 @@
 drop database IF EXISTS yamuna;
 CREATE DATABASE IF NOT EXISTS yamuna;
+
 use yamuna;
 
 drop table IF EXISTS vwuser;
+drop table IF EXISTS car_package;
 drop table IF EXISTS model_package;
 drop table IF EXISTS car;
 drop table IF EXISTS model;
@@ -82,8 +84,8 @@ create table package_maintenance (
 	package_id integer(3),
     lposition_id integer(3) 
 ); 
-create table car_package (
-    car_id integer(3),
+create table model_package (
+    model_id integer(3),
     package_id integer(3)
 );
 insert into vwuser (user_id, user_name, is_active, login_name, user_pwd, user_role) values (1, 'horst', 'Y', 'horst', 'abc123', '1');
@@ -117,15 +119,15 @@ insert into package_maintenance (package_id, lposition_id) values (1, 5);
 insert into package_maintenance (package_id, lposition_id) values (1, 5);
 insert into package_maintenance (package_id, lposition_id) values (2, 3);
 insert into package_maintenance (package_id, lposition_id) values (3, 4);
-insert into car_package values(1,1);
-insert into car_package values(1,2);
-insert into car_package values(2,1);
-insert into car_package values(3,2);
-insert into car_package values(1,4);
+insert into model_package values(1,1);
+insert into model_package values(1,2);
+insert into model_package values(2,1);
+insert into model_package values(3,2);
+insert into model_package values(1,4);
 
-alter table car_package add constraint foreign key (car_id) references car(car_id);
+alter table model_package add constraint foreign key (model_id) references model(model_id);
 alter table car add constraint foreign key (model_id) references model(model_id);
-alter table car_package add constraint foreign key (package_id) references vwpackage(package_id);
+alter table model_package add constraint foreign key (package_id) references vwpackage(package_id);
 alter table additional_items add constraint foreign key (inquiry_id) references inquiry(inquiry_id);
 alter table package_spare add constraint foreign key (package_id) references vwpackage(package_id);
 alter table package_spare add constraint foreign key (spare_id) references spare(spare_id);

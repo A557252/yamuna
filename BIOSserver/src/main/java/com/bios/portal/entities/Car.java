@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -34,8 +35,13 @@ public class Car implements Serializable{
         @JoinColumn(name = "model_id")
 	Model model;
 
-	@ManyToMany(mappedBy = "car")
+	/*@ManyToMany(mappedBy = "car")
+	List<Package> packages;*/
+
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "model_package", joinColumns = { @JoinColumn(name = "model_id") }, inverseJoinColumns = { @JoinColumn(name = "package_id") })
 	List<Package> packages;
+	
 	
 	public Car() {
 		

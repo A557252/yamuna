@@ -54,15 +54,15 @@ public class Package implements Serializable{
 	List <Maintenance> labourPositions;
 	
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "car_package", joinColumns = { @JoinColumn(name = "package_id") }, inverseJoinColumns = { @JoinColumn(name = "car_id") })
-	List <Car> car;
+	@JoinTable(name = "model_package", joinColumns = { @JoinColumn(name = "package_id") }, inverseJoinColumns = { @JoinColumn(name = "model_id") })
+	List <Model> model;
 	
 	public Package() {
 
 	}
 
 	public Package(int packageId, String packageName, int price, String description, String isActive,
-			List<Spare> spareParts, List<Maintenance> labourPositions, List<Car> car) {
+			List<Spare> spareParts, List<Maintenance> labourPositions, List<Model> model) {
 		this.packageId = packageId;
 		this.packageName = packageName;
 		this.price = price;
@@ -70,7 +70,7 @@ public class Package implements Serializable{
 		this.isActive = isActive;
 		this.spareParts = spareParts;
 		this.labourPositions = labourPositions;
-		this.car = car;
+		this.model = model;
 	}
 
 
@@ -136,7 +136,7 @@ public class Package implements Serializable{
 	public String toString() {
 		return "Package [packageId=" + packageId + ", packageName=" + packageName + ", price=" + price
 				+ ", description=" + description + ", isActive=" + isActive + ", spareParts=" + spareParts
-				+ ", labourPositions=" + labourPositions + ", car=" + car + "]";
+				+ ", labourPositions=" + labourPositions + ", model=" + model + "]";
 	}
 	
 }

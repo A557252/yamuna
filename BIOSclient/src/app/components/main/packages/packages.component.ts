@@ -22,6 +22,7 @@ export class PackagesComponent implements OnInit {
   totalAmount: any = 0;
   expand: boolean = false;
   saveInquiry: SaveInquiry;
+  
   constructor(private _inquiryService: InquiryService, private broadcaster: Broadcaster, private router: Router) {
     this.initializeSaveInquiry();
   }
