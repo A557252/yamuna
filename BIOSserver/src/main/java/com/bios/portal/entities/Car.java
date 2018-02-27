@@ -20,9 +20,6 @@ import javax.persistence.Table;
 @Table (name = "CAR")
 public class Car implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 5479501204414790597L;
 
 	@Id
@@ -34,7 +31,7 @@ public class Car implements Serializable{
 	private String vin;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "model_id")
+        @JoinColumn(name = "model_id")
 	Model model;
 
 	@ManyToMany(mappedBy = "car")
