@@ -3,3 +3,4 @@
 .expanded_table .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {border: 1px solid black;}
 .rupee_badge {margin-right: 10px;background-color: #2274AC;padding-left: 10px;padding-right: 10px;}
 .checkbox_td {width: 20px;}
+.plusButton {color: #0099da;padding-top: 4px;}

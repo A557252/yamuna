@@ -1,17 +1,17 @@
 <div>
     <div class="row BIOSpakageHdr BIOSOtherPakHdr" >
-        <div class="col-md-4 ">
+        <div class="col-md-6">
             <input placeholder="Title" class="form-control" type="text" name="" id="" 
             [(ngModel)]="addPackageObj.description">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-5">
             <input placeholder="Price" class="form-control" type="number" name="" id="" 
             [(ngModel)]="addPackageObj.price">
         </div>
-        <div class="col-md-4 align-left">
-            <button type="submit" class="btn btn-primary" (click)="addPackages(true)">
-                <i class="fa fa-add"></i> Add
-            </button>
+        <div class="col-md-1 align-left">
+            <div class="col-md-1 align-left">
+                <a (click)="addPackages(true,'')"><span class="glyphicon glyphicon-plus plusButton"></span></a>
+            </div>
         </div>
       </div>
     <div class="row">
@@ -21,12 +21,14 @@
                     <tbody>
                       <ng-container *ngIf="saveInquiry.addItems.length > 0">
                           <tr *ngFor="let item of saveInquiry.addItems">
-                              <td>{{item.description}}</td>
-                              <td class="align_right">&euro; {{item.price}}</td>
-                              <td class="align_right"><button type="submit" class="btn btn-primary" 
-                                (click)="addPackages(false,item)">
-                                  <i class="fa fa-add"></i> Delete
-                              </button></td>
+                              <td class="col-md-6">{{item.description}}</td>
+                              <td class="col-md-6">&euro; {{item.price}}</td>
+                              <td class="col-md-1">
+                                <a class="BiosBlueClr" 
+                                (click)="addPackages(false,item)" style="cursor: pointer;">
+                                      Delete
+                                </a>
+                              </td>
                           </tr>
                       </ng-container>
                     </tbody>

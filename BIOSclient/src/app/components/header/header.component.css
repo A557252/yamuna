@@ -18,5 +18,6 @@
 .BIOSusr a, .BIOSlogOut a { color: #fff; text-decoration: none;}
 .BIOSusr a i, .BIOSlogOut a i  { font-size: 24px;}
 .BIOSTopHdrWid {padding:25px 60px 72px 60px; width:100%; background-color:#0099dc;}
-.BIOSTopHdrTxt {font-family: "VWHeadlineOTSemibold"; font-size:2.250em; color:#fff; text-transform:capitalize;}
+.BIOSTopHdrTxt {font-family: "VWHeadlineOTSemibold"; font-size:3.5em; color:#fff; text-transform:capitalize;}
 .BIOSTopHdrRLog { text-align:right;}
+.BIOSlogOut span, .BIOSusr span {padding-top: 5px;display: block;font-size: 12px;line-height: 13px;}
